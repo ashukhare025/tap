@@ -1,0 +1,42 @@
+class Images {
+  static const String bn_home = 'assets/images/bn_home.svg';
+  static const String bn_products = 'assets/images/bn_products.svg';
+  static const String bn_profile = 'assets/images/bn_profile.svg';
+  static const String bn_scan = 'assets/images/bn_scan.svg';
+  static const String bn_schemes = 'assets/images/bn_schemes.svg';
+  static const String logo_png = 'assets/images/logo.png';
+  static const String logo_text_png = 'assets/images/logo_text.png';
+  static const String login_box_png = 'assets/images/box.jpg';
+  static const String side_menu = 'assets/images/side_menu.svg';
+  static const String edit_button = 'assets/images/edit_profile.svg';
+  static const String refer_friend = 'assets/images/refer_friend.svg';
+  static const String privacy_policy = 'assets/images/privacy_policy.svg';
+  static const String menu_logo = 'assets/images/menu_logo.png';
+  static const String logout = 'assets/images/logout.svg';
+  static const String ledger = 'assets/images/ledger.svg';
+  static const String gallery = 'assets/images/gallery.svg';
+  static const String contact_us = 'assets/images/contact_us.svg';
+  static const String cancel = 'assets/images/cancel.svg';
+  static const String bank_detail = 'assets/images/bank_detail.svg';
+  static const String about_us = 'assets/images/about_us.svg';
+  static const String service_guidelines =
+      'assets/images/service_guidelines.svg';
+  static const String location = 'assets/images/location.svg';
+  static const String call = 'assets/images/call.svg';
+  static const String dob_date = 'assets/images/calender_dob.png';
+  static const String mairrage_date = 'assets/images/calender_marriage.png';
+  static const String calender = 'assets/images/calender.svg';
+  static const String carpenter = 'assets/images/carpenter.svg';
+  static const String back_Button = 'assets/images/back_Button.svg';
+  static const String dealer = 'assets/images/dealer.svg';
+  static const String demo = 'assets/images/demo.png';
+  static const String otp = 'assets/images/otp.svg';
+  static const String refer_image = 'assets/images/refer_freiend.svg';
+  static const String ledger_box = 'assets/images/ledger_box.svg';
+  static const String upload = 'assets/images/upload.svg';
+  static const String waiting = 'assets/images/waiting.svg';
+  static const String conformed = 'assets/images/conformed.svg';
+  static const String reject = 'assets/images/reject.svg';
+  static const String cash = 'assets/images/cash.svg';
+  static const String setting = 'assets/images/settings.png';
+}
