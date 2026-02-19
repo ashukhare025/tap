@@ -1,39 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Map<String, String> svgAssets = {
-  'bachelor': 'assets/SVG/icon/bachelor.svg',
-  'broken-heart': 'assets/SVG/icon/broken-heart.svg',
-  'elder': 'assets/SVG/icon/elder.svg',
-  'ring': 'assets/SVG/icon/ring.svg',
-  'love': 'assets/SVG/icon/love.svg',
-  'wedding': 'assets/SVG/icon/wedding.svg',
-};
+class SvgHelper {
+  static const Map<String, String> svgAssets = {
+    'bachelor':
+        'assets/svg/icon/boy_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg',
+    'broken-heart':
+        'assets/svg/icon/heart_broken_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg',
+    'elder': 'assets/svg/icon/woman_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg',
+    'ring': 'assets/svg/icon/ring-diamond.svg',
+    'love':
+        'assets/svg/icon/partner_heart_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg',
+    'wedding': 'assets/svg/icon/rings-wedding.svg',
+  };
 
-Widget icon(
-  String name, {
-  double width = 36,
-  double height = 36,
-  Color? color,
-}) {
-  final path = svgAssets[name];
-  if (path == null) {
-    print("SVG key not found: $name");
-    return Icon(Icons.error, size: width, color: Colors.red);
+  static Widget icon(
+    String name, {
+    double width = 24,
+    double height = 24,
+    Color? color,
+  }) {
+    final path = svgAssets[name];
+
+    if (path == null) {
+      print("SVG key not found: $name");
+      return const Icon(Icons.error, color: Colors.red);
+    }
+
+    print("Trying to load SVG: $path");
+
+    return SvgPicture.asset(
+      path,
+      width: width,
+      height: height,
+      colorFilter: color != null
+          ? ColorFilter.mode(color, BlendMode.srcIn)
+          : null,
+    );
   }
-
-  print("Trying to load SVG: $path");
-
-  return SvgPicture.asset(
-    path,
-    width: width,
-    height: height,
-    fit: BoxFit.contain,
-    colorFilter: color != null
-        ? ColorFilter.mode(color, BlendMode.srcIn)
-        : null, // ← colorFilter better way hai tint ke liye (color: deprecated ho raha hai newer versions mein)
-    placeholderBuilder: (context) => const CircularProgressIndicator(),
-  );
 }
-
-// SvgPicture.asset(svgAssets['home']!);

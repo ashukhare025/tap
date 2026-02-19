@@ -4,9 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tap/app/routes/app_pages.dart';
 import 'package:tap/widget/personality_widget.dart';
-import 'package:tap/widget/relationship_widget.dart';
+
 import '../../../../SVG/svg.dart';
-import '../../../../SVG/svg.dart' as SvgHelper;
 import '../../../../core/constant/styles.dart';
 import '../../../../widget/friendship_widget.dart';
 import '../../../../widget/gender_widget.dart';
@@ -293,10 +292,9 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
               "You can change this later. It’ll show on \nyour profile.",
               style: PopRe,
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(12),
-              child: GridView.count(
+            SizedBox(height: 25),
+            Obx(
+              () => GridView.count(
                 crossAxisCount: 3,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 15,
@@ -305,55 +303,44 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
                 physics: NeverScrollableScrollPhysics(),
                 children: [
                   for (var item in controller.relationshipList)
-                    Obx(() {
-                      bool isSelected =
-                          controller.selectedRelation.value == item['title'];
-                      return GestureDetector(
-                        onTap: () =>
-                            controller.selectedRelation.value = item['title'],
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: isSelected
-                                ? Colors.white
-                                : Color(0xFFE7E5EA),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: isSelected
-
-                                  ? Color(0xFF43116A)
-                                  : Colors.transparent,
-                              width: 2,
-                            ),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Null-safe SVG
-                              SvgHelper.icon(
-                                item['svgName'],
-                                width: 36,
-                                height: 36,
-                                color: isSelected
-                                    ? Color(0xFF43116A)
-                                    : Colors.black,
-                              ),
-                              SizedBox(height: 8),
-                              Text(
-                                item['title'],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: isSelected
-                                      ? Color(0xFF43116A)
-                                      : Colors.black,
-                                ),
-                              ),
-                            ],
+                    GestureDetector(
+                      onTap: () =>
+                          controller.selectedRelation.value = item['title'],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color:
+                              controller.selectedRelation.value == item['title']
+                              ? Colors.white
+                              : Color(0xFFE7E5EA),
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color:
+                                controller.selectedRelation.value ==
+                                    item['title']
+                                ? Color(0xFF43116A)
+                                : Colors.transparent,
+                            width: 1,
                           ),
                         ),
-                      );
-                    }),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgHelper.icon(
+                              item['svgName'] ?? '',
+                              width: 24,
+                              height: 24,
+                              color:
+                                  controller.selectedRelation.value ==
+                                      item['title']
+                                  ? Color(0xFF43116A)
+                                  : Colors.black,
+                            ),
+                            SizedBox(height: 8),
+                            Text(item['title']),
+                          ],
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),

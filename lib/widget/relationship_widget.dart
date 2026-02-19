@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../SVG/svg.dart' as SvgHelper;
+import '../SVG/svg.dart';
 import '../app/modules/IntroDetails/controllers/intro_details_controller.dart';
 
 class RelationshipCard extends StatelessWidget {
@@ -33,12 +33,7 @@ class RelationshipCard extends StatelessWidget {
           ),
           child: Row(
             children: [
-              SvgHelper.icon(
-                svgName,
-                width: 28,
-                height: 28,
-                color: isSelected ? Colors.white : Colors.black,
-              ),
+              SvgHelper.icon(svgName, width: 24, height: 24),
               SizedBox(width: 10),
               Expanded(
                 child: Text(

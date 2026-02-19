@@ -41,7 +41,7 @@ class CustomBottomNav extends StatelessWidget {
               ),
               child: Icon(
                 icon,
-                color: isSelected ? Colors.white : Colors.black54,
+                color: isSelected ? Colors.white : Colors.black,
                 size: isSelected ? 31 : 22,
               ),
             ),
