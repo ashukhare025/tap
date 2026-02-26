@@ -410,7 +410,12 @@ final RegPopReg = TextStyle(
   fontSize: 13,
   color: AppColors.colorWhiteLight,
 );
-
+final RegReg = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
 final PopSemi = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w600,

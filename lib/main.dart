@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tap/language/translations.dart';
 
 import 'app/bottom_nevi/bottom_navi.dart';
+import 'app/modules/profile/views/profile_view.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
@@ -19,11 +20,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tap',
       // initialRoute: Routes.splash,
-      // getPages: AppPages.routes,
+      getPages: AppPages.routes,
       translations: AppTranslations(),
       locale: Locale('en', 'US'),
       fallbackLocale: Locale('en', 'US'),
-      home: BottomNavView(),
+      home: ProfileView(),
     );
   }
 }

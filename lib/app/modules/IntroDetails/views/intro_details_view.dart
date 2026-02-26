@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tap/app/routes/app_pages.dart';
 import 'package:tap/widget/personality_widget.dart';
-
 import '../../../../SVG/svg.dart';
 import '../../../../core/constant/styles.dart';
 import '../../../../widget/friendship_widget.dart';

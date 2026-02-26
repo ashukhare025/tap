@@ -29,6 +29,7 @@ void openChatBottomSheet(BuildContext context, ChatController controller) {
                   children: [
                     SlidableAction(
                       onPressed: (context) {
+                        print("tap");
                         controller.archiveChat(index);
                       },
                       borderRadius: BorderRadius.circular(16),
@@ -38,6 +39,7 @@ void openChatBottomSheet(BuildContext context, ChatController controller) {
                     ),
                     SlidableAction(
                       onPressed: (context) async {
+                        print("Message");
                         bool? confirm = await showDialog(
                           barrierDismissible: false,
                           context: context,
@@ -61,6 +63,7 @@ void openChatBottomSheet(BuildContext context, ChatController controller) {
                                   children: [
                                     TextButton(
                                       onPressed: () {
+                                        print("tappad");
                                         Navigator.pop(
                                           dialogContext,
                                           false,
@@ -81,6 +84,7 @@ void openChatBottomSheet(BuildContext context, ChatController controller) {
                                         elevation: 0,
                                       ),
                                       onPressed: () {
+                                        print("Delete");
                                         Navigator.pop(dialogContext, true);
                                       },
                                       child: Text("Delete", style: GilRegul),

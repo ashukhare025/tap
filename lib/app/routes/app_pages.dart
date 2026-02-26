@@ -20,6 +20,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/map/bindings/map_binding.dart';
 import '../modules/map/views/map_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/social/bindings/social_binding.dart';
 import '../modules/social/views/social_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -91,6 +93,11 @@ class AppPages {
       name: Routes.checkin,
       page: () => const CheckinView(),
       binding: CheckinBinding(),
+    ),
+    GetPage(
+      name: Routes.profile,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }
