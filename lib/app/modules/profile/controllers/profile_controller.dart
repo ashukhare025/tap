@@ -18,7 +18,25 @@ class ProfileController extends GetxController {
 
   RxList<String> language = <String>["English", "Hindi"].obs;
 
+  // 🔹 Basic Info
+  RxString name = "Jackson".obs;
+  RxString profession = "Engineer".obs;
+  RxString about =
+      "I am a good listener who enjoys meaningful conversation.".obs;
 
+  // 🔹 Personal Details
+  RxString gender = "Man".obs;
+  RxString relationship = "Single".obs;
+  RxString personality = "Introvert".obs;
+
+  RxString smoke = "Non-smoker".obs;
+  RxString drink = "Occassionally".obs;
+
+  RxString selectedDate = "".obs;
+
+  // 🔹 Multiple Selection
+  // RxList<String> vibes = <String>[].obs;
+  // RxList<String> language = <String>[].obs;
 }
 
 class GenderProfile extends StatelessWidget {

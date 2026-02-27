@@ -674,6 +674,13 @@ final RobReg = TextStyle(
   fontSize: 16,
   color: AppColors.colorLight,
 );
+final RobRegu = TextStyle(
+  fontFamily: AppConstants.fontFamily_Roboto,
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
+
 
 final RobMed = TextStyle(
   fontFamily: AppConstants.fontFamily_Roboto,
