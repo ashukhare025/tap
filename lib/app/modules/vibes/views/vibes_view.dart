@@ -9,15 +9,9 @@ class VibesView extends GetView<VibesController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('VibesView'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('VibesView'), centerTitle: true),
       body: const Center(
-        child: Text(
-          'VibesView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+        child: Text('VibesView is working', style: TextStyle(fontSize: 20)),
       ),
     );
   }

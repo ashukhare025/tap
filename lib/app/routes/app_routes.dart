@@ -16,4 +16,5 @@ abstract class Routes {
   static const homeState = '/home-state';
   static const checkin = '/checkin';
   static const profile = '/profile';
+  static const editProfile = '/edit-profile';
 }

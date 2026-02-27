@@ -136,6 +136,13 @@ final MediumPopi = TextStyle(
   color: AppColors.colorGold,
 );
 
+final MediuPopi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+  color: AppColors.colorWhiteLight,
+);
+
 final MediumPopins = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w500,
@@ -477,6 +484,12 @@ final PopRe = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 14,
   color: AppColors.colorWhiteLight,
+);
+final PopReGu = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+  color: AppColors.colorWhite,
 );
 
 final PopSemiBo = TextStyle(
