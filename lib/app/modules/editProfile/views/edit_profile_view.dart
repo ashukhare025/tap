@@ -467,31 +467,34 @@ class EditProfileView extends GetView<EditProfileController> {
               GestureDetector(
                 onTap: () {
                   print("Button");
-                  // profileController.name.value = controller.nameController.text;
-                  // profileController.profession.value =
-                  //     controller.professionController.text;
-                  // profileController.about.value =
-                  //     controller.aboutController.text;
-                  //
-                  // profileController.gender.value = controller.gender.value;
-                  // profileController.relationship.value =
-                  //     controller.relationship.value;
-                  // profileController.personality.value =
-                  //     controller.personality.value;
-                  //
-                  // profileController.smoke.value = controller.smoke.value;
-                  // profileController.drink.value = controller.drink.value;
-                  //
-                  // profileController.selectedDate.value =
-                  //     controller.selectedDate.value;
-                  //
-                  // profileController.vibes.value = [
-                  //   controller.selectedVibe.value,
-                  // ];
-                  // profileController.language.value = [
-                  //   controller.language.value,
-                  // ];
-                  //
+                  profileController.name.value = controller.nameController.text;
+                  profileController.profession.value =
+                      controller.professionController.text;
+                  profileController.about.value =
+                      controller.aboutController.text;
+
+                  profileController.gender.value = controller.gender.value;
+                  profileController.relationship.value =
+                      controller.relationship.value;
+                  profileController.personality.value =
+                      controller.personality.value;
+
+                  profileController.smoke.value = controller.smoke.value;
+                  profileController.drink.value = controller.drink.value;
+
+                  profileController.selectedDate.value =
+                      controller.selectedDate.value;
+
+                  // Vibes (single select -> list)
+                  profileController.vibes.value = [
+                    controller.selectedVibe.value,
+                  ];
+
+                  // Language (string -> list convert)
+                  profileController.language.value = [
+                    controller.language.value,
+                  ];
+
                   Get.back();
                 },
                 child: Padding(

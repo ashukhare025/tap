@@ -205,6 +205,12 @@ final SemiPopins = TextStyle(
   fontSize: 24,
   color: AppColors.colorGold,
 );
+final ExLight = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w300,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
 
 final SemiPop = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
@@ -443,6 +449,12 @@ final PopMed = TextStyle(
   fontSize: 16,
   color: AppColors.colorBlack,
 );
+final PopMedWhi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorWhite,
+);
 
 final PopSemiBol = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
@@ -485,6 +497,14 @@ final PopRe = TextStyle(
   fontSize: 14,
   color: AppColors.colorWhiteLight,
 );
+
+final PopReBla = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
+  fontSize: 12,
+  color: AppColors.colorBlack,
+);
+
 final PopReGu = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
@@ -680,7 +700,6 @@ final RobRegu = TextStyle(
   fontSize: 16,
   color: AppColors.colorBlack,
 );
-
 
 final RobMed = TextStyle(
   fontFamily: AppConstants.fontFamily_Roboto,

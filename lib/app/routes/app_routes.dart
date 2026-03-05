@@ -17,4 +17,5 @@ abstract class Routes {
   static const checkin = '/checkin';
   static const profile = '/profile';
   static const editProfile = '/edit-profile';
+  static const discover = '/discover';
 }

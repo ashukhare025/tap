@@ -690,7 +690,7 @@ Widget dobPicker(IntroDetailsController c) {
                 itemExtent: 34,
                 scrollController: c.monthCtrl,
                 onSelectedItemChanged: (i) {
-                  c.selectedMonth.value = i + 1;
+                  c.updateMonth(i + 1);
                 },
                 children: c.months
                     .map(
@@ -746,7 +746,7 @@ Widget dobPicker(IntroDetailsController c) {
                 itemExtent: 34,
                 scrollController: c.yearCtrl,
                 onSelectedItemChanged: (i) {
-                  c.selectedYear.value = c.years[i];
+                  c.updateYear(c.years[i]);
                 },
                 children: c.years
                     .map(

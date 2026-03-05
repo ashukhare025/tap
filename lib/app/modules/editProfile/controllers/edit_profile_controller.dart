@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/constant/styles.dart';
+import '../../profile/controllers/profile_controller.dart';
 
 class EditProfileController extends GetxController {
   TextEditingController nameController = TextEditingController();
@@ -18,14 +19,14 @@ class EditProfileController extends GetxController {
   RxString personality = "Introvert".obs;
   RxString language = "English".obs;
   RxString smoke = "Non-smoker".obs;
-  RxString drink = "Occassionally".obs;
+  RxString drink = "Occasionally".obs;
 
   final List<String> genderOptions = ["Man", "Woman", "Other"];
   final List<String> relationshipOptions = ["Single", "Married", "Divorced"];
   final List<String> personalityOptions = ["Introvert", "Extrovert"];
   final List<String> languageOption = ["English", "Hindi"];
   final List<String> smokeOption = ["Non-smoker", "smoker"];
-  final List<String> drinkOption = ["Occassionally", "Occassionally"];
+  final List<String> drinkOption = ["Occasionally", "Regularly"];
 
   // image camera Gallery
   void removePhoto(int index) {
@@ -96,6 +97,34 @@ class EditProfileController extends GetxController {
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       Get.snackbar("Error", "Could not open link");
     }
+  }
+
+  @override
+  void onInit() {
+    final profile = Get.find<ProfileController>();
+
+    nameController.text = profile.name.value;
+    professionController.text = profile.profession.value;
+    aboutController.text = profile.about.value;
+
+    gender.value = profile.gender.value;
+    relationship.value = profile.relationship.value;
+    personality.value = profile.personality.value;
+
+    smoke.value = profile.smoke.value;
+    drink.value = profile.drink.value;
+
+    if (profile.language.isNotEmpty) {
+      language.value = profile.language.first;
+    }
+
+    if (profile.vibes.isNotEmpty) {
+      selectedVibe.value = profile.vibes.first;
+    }
+
+    selectedDate.value = profile.selectedDate.value;
+
+    super.onInit();
   }
 }
 

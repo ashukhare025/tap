@@ -7,17 +7,30 @@ import 'package:image_picker/image_picker.dart';
 import '../../../../core/constant/styles.dart';
 
 class IntroDetailsController extends GetxController {
+  // ------------------------------
+  // TextEditingControllers
+  // ------------------------------
   TextEditingController nameController = TextEditingController();
   TextEditingController dayController = TextEditingController();
   TextEditingController monthController = TextEditingController();
   TextEditingController yearController = TextEditingController();
 
+  // ------------------------------
+  // Form Key for email validation
+  // ------------------------------
   final emailFormKey = GlobalKey<FormState>();
-  var name = ''.obs;
-  var selectedDay = 1.obs;
-  var selectedMonth = 1.obs; // Jan
-  var selectedYear = 1990.obs;
 
+  // ------------------------------
+  // Observable variables for user inputs
+  // ------------------------------
+  var name = ''.obs; // User name
+  var selectedDay = 1.obs; // Selected day for DOB
+  var selectedMonth = 1.obs; // Selected month for DOB
+  var selectedYear = DateTime(1950).year.obs; // Selected year for DOB
+
+  // ------------------------------
+  // Month Names
+  // ------------------------------
   final months = const [
     "Jan",
     "Feb",
@@ -32,30 +45,108 @@ class IntroDetailsController extends GetxController {
     "Nov",
     "Dec",
   ];
+
+  // ------------------------------
+  // Days and Years List
+  // ------------------------------
   List<int> get days {
     final maxDays = DateUtils.getDaysInMonth(
       selectedYear.value,
       selectedMonth.value,
     );
-    return List.generate(maxDays, (i) => i + 1);
+    return List.generate(maxDays, (i) => i + 1); // 1..maxDays
   }
 
   List<int> get years {
-    final currentYear = DateTime.now().year;
-    return List.generate(100, (i) => currentYear - i);
+    return List.generate(
+      2026 - 1950 + 1, // total years
+      (index) => 1950 + index,
+    );
   }
 
-  // Page process
+  // ------------------------------
+  // Update DOB selection
+  // ------------------------------
+  void updateMonth(int month) {
+    selectedMonth.value = month;
+
+    final maxDays = DateUtils.getDaysInMonth(
+      selectedYear.value,
+      selectedMonth.value,
+    );
+
+    if (selectedDay.value > maxDays) {
+      selectedDay.value = maxDays;
+      dayCtrl.jumpToItem(maxDays - 1); // scroll picker
+    }
+  }
+
+  void updateYear(int year) {
+    selectedYear.value = year;
+
+    final maxDays = DateUtils.getDaysInMonth(
+      selectedYear.value,
+      selectedMonth.value,
+    );
+
+    if (selectedDay.value > maxDays) {
+      selectedDay.value = maxDays;
+      dayCtrl.jumpToItem(maxDays - 1);
+    }
+  }
+
+  // ------------------------------
+  // Scroll Controllers for Pickers
+  // ------------------------------
+  late FixedExtentScrollController monthCtrl;
+  late FixedExtentScrollController dayCtrl;
+  late FixedExtentScrollController yearCtrl;
+
+  @override
+  void onInit() {
+    super.onInit();
+
+    final maxYear = DateTime.now().year; // 2026 for example
+    selectedYear.value = 1990; // start from 1990
+
+    monthCtrl = FixedExtentScrollController(
+      initialItem: selectedMonth.value - 1,
+    );
+
+    dayCtrl = FixedExtentScrollController(initialItem: selectedDay.value - 1);
+
+    yearCtrl = FixedExtentScrollController(
+      initialItem: 0, // 1990 pe scroll start
+    );
+  }
+
+  // ------------------------------
+  // Full DOB string
+  // ------------------------------
   String get fullDob =>
       "${months[selectedMonth.value - 1]} "
       "${selectedDay.value}, "
       "${selectedYear.value}";
-  var currentStep = 1.obs;
-  final totalSteps = 9;
+
+  // ------------------------------
+  // Stepper
+  // ------------------------------
+  var currentStep = 1.obs; // current step in intro process
+  final totalSteps = 9; // total steps
+
+  // ------------------------------
+  // Gender selection
+  // ------------------------------
   var selectedGender = "".obs;
+
+  // ------------------------------
+  // Email Controller
+  // ------------------------------
   TextEditingController emailController = TextEditingController();
+
   @override
   void onClose() {
+    // Dispose all controllers
     nameController.clear();
     nameController.dispose();
     dayController.dispose();
@@ -67,6 +158,9 @@ class IntroDetailsController extends GetxController {
     super.onClose();
   }
 
+  // ------------------------------
+  // Step navigation
+  // ------------------------------
   void nextStep() {
     if (currentStep.value < totalSteps) currentStep.value++;
   }
@@ -75,21 +169,21 @@ class IntroDetailsController extends GetxController {
     if (currentStep.value > 1) currentStep.value--;
   }
 
+  // ------------------------------
+  // Bottom Text for each step
+  // ------------------------------
   String getBottomText() {
     switch (currentStep.value) {
       case 3:
         return "Not now";
-
       case 4:
       case 5:
         return "You’ll only be shown to people in the same \nmode as you.";
-
       case 6:
       case 7:
       case 8:
       case 9:
         return "Skip";
-
       default:
         return "";
     }
@@ -99,50 +193,21 @@ class IntroDetailsController extends GetxController {
     return currentStep.value == 4 || currentStep.value == 5;
   }
 
-  //Gender
+  // ------------------------------
+  // Gender selection
+  // ------------------------------
   void selectGender(String gender) {
     selectedGender.value = gender;
   }
 
-  // Date and Time
+  // ------------------------------
+  // Age calculation
+  // ------------------------------
   bool get isValidDob => fullDob != "Not selected";
-  int get age {
-    final now = DateTime.now();
-    final dob = DateTime(
-      selectedYear.value,
-      selectedMonth.value,
-      selectedDay.value,
-    );
-
-    if (dob.isAfter(now)) return 0;
-
-    int calculatedAge = now.year - dob.year;
-
-    if (now.month < dob.month ||
-        (now.month == dob.month && now.day < dob.day)) {
-      calculatedAge--;
-    }
-
-    return calculatedAge;
-  }
-
-  late FixedExtentScrollController monthCtrl;
-  late FixedExtentScrollController dayCtrl;
-  late FixedExtentScrollController yearCtrl;
-  @override
-  void onInit() {
-    monthCtrl = FixedExtentScrollController(
-      initialItem: selectedMonth.value - 1,
-    );
-    dayCtrl = FixedExtentScrollController(initialItem: selectedDay.value - 1);
-    yearCtrl = FixedExtentScrollController(
-      initialItem: years.indexOf(selectedYear.value),
-    );
-    super.onInit();
-  }
-
-  // Email
-
+  int get age => DateTime.now().year - selectedYear.value;
+  // ------------------------------
+  // Email validation
+  // ------------------------------
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
       return "Email is required";
@@ -177,9 +242,7 @@ class IntroDetailsController extends GetxController {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                 ),
-
                 SizedBox(height: 16),
-
                 Text(
                   "We need to make sure that\n${emailController.text} is your email.",
                   textAlign: TextAlign.center,
@@ -189,9 +252,7 @@ class IntroDetailsController extends GetxController {
                     height: 1.4,
                   ),
                 ),
-
                 SizedBox(height: 28),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -234,12 +295,17 @@ class IntroDetailsController extends GetxController {
     );
   }
 
+  // ------------------------------
+  // User Type Selection
+  // ------------------------------
   var selectedType = ''.obs;
   void selectType(String type) {
     selectedType.value = type;
   }
 
-  // image and Gallery
+  // ------------------------------
+  // Image Picker & Gallery
+  // ------------------------------
   void removePhoto(int index) {
     photos[index] = null;
   }
@@ -267,7 +333,6 @@ class IntroDetailsController extends GetxController {
               leading: Container(
                 height: 44,
                 width: 44,
-
                 decoration: BoxDecoration(
                   color: Color(0XFFEEEDEF),
                   shape: BoxShape.circle,
@@ -315,7 +380,9 @@ class IntroDetailsController extends GetxController {
     );
   }
 
+  /// ------------------------------
   /// Validation (minimum 4 photos)
+  /// ------------------------------
   bool validatePhotos() {
     int count = photos.where((p) => p != null).length;
     if (count < 4) {
@@ -325,15 +392,17 @@ class IntroDetailsController extends GetxController {
     return true;
   }
 
-  // relationship
-
+  // ------------------------------
+  // Relationship Selection
+  // ------------------------------
   RxString selectedRelation = "".obs;
   void selectRelation(String relation) {
     selectedRelation.value = relation;
   }
 
-  // language
-
+  // ------------------------------
+  // Language Selection
+  // ------------------------------
   var selectedLanguage = ''.obs;
   var searchText = ''.obs;
 
@@ -362,13 +431,17 @@ class IntroDetailsController extends GetxController {
     selectedLanguage.value = language;
   }
 
+  // ------------------------------
+  // Personal Type Selection
+  // ------------------------------
   var selectedPersonal = ''.obs;
   void selectPersonal(String personal) {
     selectedPersonal.value = personal;
   }
 
-  // energy selected
-
+  // ------------------------------
+  // Energy / Interests
+  // ------------------------------
   final interested = [
     "Calm",
     "Peaceful",
@@ -410,6 +483,9 @@ class IntroDetailsController extends GetxController {
     return true;
   }
 
+  // ------------------------------
+  // Relationship List Data
+  // ------------------------------
   final List<Map<String, dynamic>> relationshipList = [
     {'title': "Single", 'svgName': 'bachelor'},
     {'title': "Relationship", 'svgName': 'love'},

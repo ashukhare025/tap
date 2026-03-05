@@ -16,6 +16,8 @@ import '../modules/Otp/bindings/otp_binding.dart';
 import '../modules/Otp/views/otp_view.dart';
 import '../modules/chat/bindings/chat_binding.dart';
 import '../modules/chat/views/chat_view.dart';
+import '../modules/discover/bindings/discover_binding.dart';
+import '../modules/discover/views/discover_view.dart';
 import '../modules/editProfile/bindings/edit_profile_binding.dart';
 import '../modules/editProfile/views/edit_profile_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -105,6 +107,11 @@ class AppPages {
       name: Routes.editProfile,
       page: () => EditProfileView(),
       binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: Routes.discover,
+      page: () => const DiscoverView(),
+      binding: DiscoverBinding(),
     ),
   ];
 }

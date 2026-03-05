@@ -63,25 +63,38 @@ class ProfileView extends GetView<ProfileController> {
 
                     Positioned(
                       bottom: 0,
-                      child: Container(
-                        width: 333,
-                        height: 50,
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                          color: Color(0XFF3C006B),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Verified your profile", style: PopSemibold),
-                            Icon(
-                              Icons.close,
-                              color: Color(0XFFFFFFFF),
-                              size: 16,
-                            ),
-                          ],
-                        ),
+                      child: Obx(
+                        () => controller.isVerified.value
+                            ? SizedBox()
+                            : GestureDetector(
+                                onTap: () {
+                                  controller.isVerified.value = true;
+                                },
+                                child: Container(
+                                  width: 333,
+                                  height: 50,
+                                  padding: EdgeInsets.symmetric(horizontal: 20),
+                                  decoration: BoxDecoration(
+                                    color: Color(0XFF3C006B),
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Verified your profile",
+                                        style: PopSemibold,
+                                      ),
+                                      Icon(
+                                        Icons.close,
+                                        color: Color(0XFFFFFFFF),
+                                        size: 16,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                       ),
                     ),
                   ],
@@ -104,17 +117,32 @@ class ProfileView extends GetView<ProfileController> {
                         children: [
                           Row(
                             children: [
-                              Text("Jackson, 32", style: SemiPop),
+                              Obx(
+                                () => Text(
+                                  "${controller.name.value}, 32",
+                                  style: SemiPop,
+                                ),
+                              ),
                               SizedBox(width: 5),
-                              Image.asset(
-                                "assets/image/verified.png",
-                                height: 22,
-                                width: 22,
-                                fit: BoxFit.contain,
+                              Obx(
+                                () => controller.isVerified.value
+                                    ? Image.asset(
+                                        "assets/image/verified.png",
+                                        height: 22,
+                                        width: 22,
+                                        fit: BoxFit.contain,
+                                      )
+                                    : SizedBox(),
                               ),
                             ],
                           ),
-                          Text("Engineer", style: RegReg),
+
+                          Obx(
+                            () => Text(
+                              controller.profession.value,
+                              style: RegReg,
+                            ),
+                          ),
                         ],
                       ),
 
@@ -149,16 +177,24 @@ class ProfileView extends GetView<ProfileController> {
               SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 21, right: 15),
-                child: Container(
-                  width: 333,
-                  height: 33,
-                  color: Color(0XFFFFFFFF),
-                  child: Row(
+                child: Obx(
+                  () => Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GenderProfile(title: "Man", icon: Icons.male),
-                      GenderProfile(title: "Single", icon: Icons.man),
-                      GenderProfile(title: "Introvert", icon: Icons.psychology),
+                      GenderProfile(
+                        title: controller.gender.value,
+                        icon: Icons.male,
+                      ),
+
+                      GenderProfile(
+                        title: controller.relationship.value,
+                        icon: Icons.man,
+                      ),
+
+                      GenderProfile(
+                        title: controller.personality.value,
+                        icon: Icons.psychology,
+                      ),
                     ],
                   ),
                 ),
@@ -172,11 +208,7 @@ class ProfileView extends GetView<ProfileController> {
                   children: [
                     Text("About", style: PopMed),
                     SizedBox(height: 5),
-                    Text(
-                      "I am a good listener who enjoys meaningful conversation "
-                      "to understand and appreciate each other's perspectives.",
-                      style: RegReg,
-                    ),
+                    Obx(() => Text(controller.about.value, style: RegReg)),
                   ],
                 ),
               ),
@@ -246,13 +278,15 @@ class ProfileView extends GetView<ProfileController> {
               SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 21),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF3C006B),
-                    borderRadius: BorderRadius.circular(12),
+                child: Obx(
+                  () => Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF3C006B),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(controller.smoke.value, style: PopReGu),
                   ),
-                  child: Text("Non-Smoker", style: PopReGu),
                 ),
               ),
               SizedBox(height: 10),
@@ -265,13 +299,15 @@ class ProfileView extends GetView<ProfileController> {
               SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 21),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF3C006B),
-                    borderRadius: BorderRadius.circular(12),
+                child: Obx(
+                  () => Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF3C006B),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(controller.drink.value, style: PopReGu),
                   ),
-                  child: Text("Occassionally", style: PopReGu),
                 ),
               ),
               SizedBox(height: 10),

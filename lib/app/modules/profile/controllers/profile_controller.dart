@@ -4,11 +4,7 @@ import 'package:get/get.dart';
 import '../../../../core/constant/styles.dart';
 
 class ProfileController extends GetxController {
-  var selectedGender = "".obs;
-  void selectGender(String gender) {
-    selectedGender.value = gender;
-  }
-
+  var isVerified = false.obs;
   RxList<String> vibes = <String>[
     "Calm",
     "Dance",
@@ -22,7 +18,8 @@ class ProfileController extends GetxController {
   RxString name = "Jackson".obs;
   RxString profession = "Engineer".obs;
   RxString about =
-      "I am a good listener who enjoys meaningful conversation.".obs;
+      "I am a good listener who enjoys meaningful conversation to understand and appreciate each other's perspectives."
+          .obs;
 
   // 🔹 Personal Details
   RxString gender = "Man".obs;
@@ -30,7 +27,7 @@ class ProfileController extends GetxController {
   RxString personality = "Introvert".obs;
 
   RxString smoke = "Non-smoker".obs;
-  RxString drink = "Occassionally".obs;
+  RxString drink = "Occasionally".obs;
 
   RxString selectedDate = "".obs;
 
@@ -47,57 +44,14 @@ class GenderProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProfileController controller = Get.put(ProfileController());
-
-    // return Obx(() {
-    //   final isSelected = controller.selectedGender.value == title;
-    //
-    //   return GestureDetector(
-    //     onTap: () => controller.selectGender(title),
-    //     child: Container(
-    //       padding: const EdgeInsets.symmetric(vertical: 6),
-    //       decoration: BoxDecoration(
-    //         borderRadius: BorderRadius.circular(14),
-    //         border: Border.all(
-    //           width: 1,
-    //           color: isSelected ? Colors.purple : Colors.grey,
-    //         ),
-    //         color: isSelected ? Colors.purple.withOpacity(0.1) : Colors.white,
-    //       ),
-    //       child: Row(
-    //         mainAxisSize: MainAxisSize.min,
-    //         children: [
-    //           Icon(
-    //             icon,
-    //             size: 16,
-    //             color: isSelected ? Colors.purple : Colors.black,
-    //           ),
-    //           const SizedBox(width: 5),
-    //           Text(title, style: RegReg),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // });
-    return Obx(() {
-      final isSelected = controller.selectedGender.value == title;
-
-      return GestureDetector(
-        onTap: () => controller.selectGender(title),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-              size: 14.65,
-              color: isSelected ? Colors.black : Colors.black,
-            ),
-            const SizedBox(width: 5),
-            Text(title, style: RegReg),
-          ],
-        ),
-      );
-    });
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 14.65, color: Colors.black),
+        const SizedBox(width: 5),
+        Text(title, style: RegReg),
+      ],
+    );
   }
 }
 
