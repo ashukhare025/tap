@@ -29,5 +29,7 @@ class AppColors {
   static Color colorGreen = Color(0xFF02C177);
   static Color colorGrayishWhite = Color(0XFFEEEDEF);
   static Color colorBlackColor = Color(0XFFEEEDEF);
-
+  static Color colorBCColor = Color(0XFF1E1E1E);
+  static Color colorPiColor = Color(0XFFA89797);
+  static Color colorBLColor = Color(0XFF000E08);
 }

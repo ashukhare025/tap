@@ -18,4 +18,9 @@ abstract class Routes {
   static const profile = '/profile';
   static const editProfile = '/edit-profile';
   static const discover = '/discover';
+  static const updateGender = '/update-gender';
+  static const updateHabits = '/update-habits';
+  static const updateRelation = '/update-relation';
+  static const updatePersonality = '/update-personality';
+  static const updateLanguage = '/update-language';
 }

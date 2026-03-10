@@ -16,7 +16,7 @@ class EditProfileView extends GetView<EditProfileController> {
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
         backgroundColor: Color(0xFFFFFFFF),
-        title: const Text('Edit Profile'),
+        title: Text('Edit Profile', style: SemiPop),
         leading: SizedBox(
           width: 14,
           height: 26,
@@ -72,7 +72,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                         width: 41,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Color(0XFF43116A),
+                                          color: Color(0xFF2F5D62),
                                         ),
                                         child: Icon(
                                           Icons.add,
@@ -419,7 +419,7 @@ class EditProfileView extends GetView<EditProfileController> {
                               height: 35,
                               width: 35,
                               decoration: BoxDecoration(
-                                color: Color(0xFF3C006B),
+                                color: Color(0xFF2F5D62),
                                 shape: BoxShape.circle,
                               ),
                               child: ClipOval(
@@ -503,7 +503,7 @@ class EditProfileView extends GetView<EditProfileController> {
                     height: 48,
                     width: 333,
                     decoration: BoxDecoration(
-                      color: Color(0xFF43116A),
+                      color: Color(0xFFE07A5F),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(child: Text("Save", style: PopMediu)),

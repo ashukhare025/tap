@@ -59,10 +59,10 @@ Widget vibeChip(String text) {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     decoration: BoxDecoration(
-      color: Color(0xFF3C006B),
+      color: Color(0xFFE6F3F4),
       borderRadius: BorderRadius.circular(12),
     ),
-    child: Text(text, style: PopReGu),
+    child: Text(text, style: RegReg),
   );
 }
 
@@ -70,10 +70,10 @@ Widget language(String text) {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     decoration: BoxDecoration(
-      color: Color(0xFF3C006B),
+      color: Color(0xFFE6F3F4),
       borderRadius: BorderRadius.circular(12),
     ),
-    child: Text(text, style: PopReGu),
+    child: Text(text, style: RegReg),
   );
 }
 

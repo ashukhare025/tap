@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tap',
-      // initialRoute: Routes.splash,
+      initialRoute: Routes.updateLanguage,
       getPages: AppPages.routes,
       translations: AppTranslations(),
       locale: Locale('en', 'US'),
       fallbackLocale: Locale('en', 'US'),
-      home: BottomNavView(),
+      // home: BottomNavView(),
     );
   }
 }

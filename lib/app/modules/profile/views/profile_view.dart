@@ -75,7 +75,7 @@ class ProfileView extends GetView<ProfileController> {
                                   height: 50,
                                   padding: EdgeInsets.symmetric(horizontal: 20),
                                   decoration: BoxDecoration(
-                                    color: Color(0XFF3C006B),
+                                    color: Color(0XFF2F5D62),
                                     borderRadius: BorderRadius.circular(16),
                                   ),
                                   child: Row(
@@ -151,7 +151,7 @@ class ProfileView extends GetView<ProfileController> {
                         height: 50,
                         width: 50,
                         decoration: BoxDecoration(
-                          color: Color(0xFF3C006B),
+                          color: Color(0XFF2F5D62),
                           shape: BoxShape.circle,
                         ),
                         child: Center(
@@ -206,7 +206,7 @@ class ProfileView extends GetView<ProfileController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("About", style: PopMed),
+                    Text("About Me", style: PopMed),
                     SizedBox(height: 5),
                     Obx(() => Text(controller.about.value, style: RegReg)),
                   ],
@@ -282,10 +282,10 @@ class ProfileView extends GetView<ProfileController> {
                   () => Container(
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Color(0xFF3C006B),
+                      color: Color(0xFFE6F3F4),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(controller.smoke.value, style: PopReGu),
+                    child: Text(controller.smoke.value, style: RegReg),
                   ),
                 ),
               ),
@@ -303,10 +303,10 @@ class ProfileView extends GetView<ProfileController> {
                   () => Container(
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Color(0xFF3C006B),
+                      color: Color(0xFFE6F3F4),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(controller.drink.value, style: PopReGu),
+                    child: Text(controller.drink.value, style: RegReg),
                   ),
                 ),
               ),
@@ -330,7 +330,7 @@ class ProfileView extends GetView<ProfileController> {
                       ),
 
                       decoration: BoxDecoration(
-                        color: Color(0xFF3C006B),
+                        color: Color(0xFF2F5D62),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -346,7 +346,7 @@ class ProfileView extends GetView<ProfileController> {
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xFF3C006B),
+                        color: Color(0xFF2F5D62),
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
@@ -363,7 +363,7 @@ class ProfileView extends GetView<ProfileController> {
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xFF3C006B),
+                        color: Color(0xFF2F5D62),
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
@@ -380,7 +380,7 @@ class ProfileView extends GetView<ProfileController> {
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xFF3C006B),
+                        color: Color(0xFF2F5D62),
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(

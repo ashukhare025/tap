@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tap/app/routes/app_pages.dart';
+import 'package:tap/core/constant/app_constants.dart';
 import 'package:tap/widget/personality_widget.dart';
 import '../../../../SVG/svg.dart';
 import '../../../../core/constant/styles.dart';
@@ -20,10 +21,7 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Oh hey! Let's start with an \nintro.",
-              style: SemiPopinsBlack,
-            ),
+            Text("Oh hey! Let's start with an intro.", style: PopSemiBol),
             SizedBox(height: 30),
 
             // Obx(
@@ -33,7 +31,8 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
             //   ),
             // ),
             SizedBox(height: 10),
-
+            Text("Your Name", style: PopMed),
+            SizedBox(height: 10),
             TextFormField(
               controller: controller.nameController,
               onChanged: (val) {
@@ -43,13 +42,12 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
                 hintText: "Enter Name",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(width: 1),
                 ),
               ),
             ),
-
             SizedBox(height: 25),
-
-            Text("Date of Birth", style: MediumPopMed),
+            Text("Date of Birth", style: MediumBMed),
             SizedBox(height: 12),
             dobPicker(controller),
           ],
@@ -64,7 +62,7 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
           Obx(
             () => Text(
               "${controller.name.value.isEmpty ? "Your name" : controller.name.value} is a Cool name",
-              style: MediumPopMed,
+              style: PopSemiBol,
             ),
           ),
 
@@ -73,12 +71,10 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
           /// SUBTITLE
           Text(
             textAlign: TextAlign.start,
-            "We love that you’re here. pick the gender that best describes you, then add more about it if \nyou like.",
-            style: RegPop,
+            "We love that you’re here. pick the gender that best describes you, then add more about it if you like.",
+            style: RegPopRe,
           ),
-
           SizedBox(height: 24),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -109,7 +105,7 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
                   text: "You can always update this later. ",
                   style: RegPopReg,
                 ),
-                TextSpan(text: "A note about\ngender on Tap.", style: PopSemi),
+                TextSpan(text: "A note about\ngender on Tap.", style: PopSemiB),
               ],
             ),
           ),
@@ -120,7 +116,7 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Can we get your email?", style: SemiPopinsBlack),
+          Text("Can we get your email?", style: PopSemiBol),
           SizedBox(height: 10),
           Text(
             "We’ll use this to recover your account ASAP if you can’t log in.",
@@ -137,9 +133,10 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
               validator: controller.validateEmail,
               decoration: InputDecoration(
                 hintText: "xyz@gmail.com",
-                hintStyle: PopMed,
+                hintStyle: popReqBC,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(width: 1),
                 ),
               ),
             ),
@@ -211,7 +208,7 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
           SizedBox(height: 10),
           Text(
             "you do you! Add at least 4 photo, whether it’s you with you pet, eating your fave food, or in a place you love.",
-            style: PopRegu,
+            style: PopRe,
           ),
           SizedBox(height: 15),
           Obx(
@@ -282,7 +279,7 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(Icons.favorite, size: 35, color: Color(0XFF43116A)),
+            Icon(Icons.favorite, size: 35, color: Color(0XFF2F5D62)),
             SizedBox(height: 10),
             Text("Your Relationship Status?", style: PopSemiBol),
             SizedBox(height: 15),
@@ -358,10 +355,6 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
             style: PopRe,
           ),
           SizedBox(height: 10),
-          Text("You Selected", style: PopSemibol),
-
-          SizedBox(height: 10),
-
           Obx(() {
             if (controller.selectedLanguage.value.isEmpty) return SizedBox();
 
@@ -392,18 +385,27 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
           SizedBox(height: 20),
 
           /// Search
-          TextField(
-            decoration: InputDecoration(
-              hintText: "Search",
-              // suffixText: "All Language",
-              prefixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
+          Container(
+            width: 321,
+            height: 35,
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "You Selected",
+                hintStyle: TextRegular,
+                prefixIcon: Icon(Icons.search, size: 20),
+                isDense: true,
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 8,
+                  horizontal: 10,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                  borderSide: BorderSide(width: 1, color: Color(0XFF000000)),
+                ),
               ),
+              onChanged: (val) => controller.searchText.value = val,
             ),
-            onChanged: (val) => controller.searchText.value = val,
           ),
-
           SizedBox(height: 10),
 
           /// List
@@ -465,62 +467,107 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
         ],
       ),
       //Step- 9
-      Column(
-        children: [
-          Text("Which vibes describe your energy?", style: PopSemiBol),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(right: 50),
-            child: Text(
-              "Select The vibes you enjoy being around. It helps ut match you with similar vibes.",
-              style: PopRe,
+      SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Which vibes describe your energy?", style: PopSemiBol),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(right: 50),
+              child: Text(
+                "Select The vibes you enjoy being around. It helps ut match you with similar vibes.",
+                style: PopRe,
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Obx(
-            () => Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              children: controller.interested.map((value) {
-                bool isSelected = controller.selectedInterests.contains(value);
-                return GestureDetector(
-                  onTap: () => controller.toggleInterest(value),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                    decoration: BoxDecoration(
-                      color: isSelected ? Color(0xFF5A1A8B) : Color(0xFFE7E5EA),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Text(
-                      value,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: isSelected ? Colors.white : Colors.black,
-                      ),
-                    ),
+            SizedBox(height: 20),
+            Obx(
+              () => Container(
+                width: 343,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: const Color(0XFFFFFFFF),
+                  borderRadius: BorderRadius.circular(41.63),
+                  border: Border.all(
+                    width: 0.83,
+                    color: const Color(0xff2F5D62),
                   ),
-                );
-              }).toList(),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: List.generate(controller.moods.length, (index) {
+                    bool selected = controller.selectedIndex.value == index;
+
+                    return Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          controller.selectedIndex.value = index;
+                          controller.changeTab(controller.moods[index]);
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: selected
+                                ? Color(0xFF2F5D62)
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.circular(40.63),
+                          ),
+                          child: Text(
+                            controller.moods[index],
+                            style: TextStyle(
+                              color: selected
+                                  ? Colors.white
+                                  : Color(0XFF525252),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 11,
+                              fontFamily: AppConstants.fontFamily_Poppins,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Obx(
-            () => controller.selectedInterests.length < 5
-                ? Text(
-                    "Select ${5 - controller.selectedInterests.length} more categories to proceed",
-                    style: PopMedium,
-                  )
-                : SizedBox(),
-          ),
-          SizedBox(height: 20),
-          Obx(
-            () => Text(
-              "${controller.selectedInterests.length}/${controller.maxSelection} Selected",
-              style: PopSemiBo,
-            ),
-          ),
-        ],
+            SizedBox(height: 10),
+            Obx(() {
+              List<String> vibes =
+                  controller.vibeCategories[controller.selectedTab.value] ?? [];
+
+              return Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: List.generate(vibes.length, (index) {
+                  String vibe = vibes[index];
+                  bool selected = controller.selectedInterests.contains(vibe);
+
+                  return GestureDetector(
+                    onTap: () {
+                      controller.toggleInterest(vibe);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 6,
+                      ),
+                      decoration: BoxDecoration(
+                        color: selected ? Color(0XFFE6F3F4) : Color(0XFFEEEDEF),
+                        borderRadius: BorderRadius.circular(41),
+                        border: Border.all(
+                          color: selected
+                              ? Color(0XFF2F5D62)
+                              : Color(0XFFEEEDEF),
+                        ),
+                      ),
+                      child: Text(vibe, style: RegPop),
+                    ),
+                  );
+                }),
+              );
+            }),
+          ],
+        ),
       ),
     ];
   }
@@ -583,14 +630,14 @@ class IntroDetailsView extends GetView<IntroDetailsController> {
                         // Step 3,6,7,8,9 → Button
                         return TextButton(
                           onPressed: controller.nextStep,
-                          child: Text(text, style: Regpop),
+                          child: Text(text, style: PopSemiBo),
                         );
                       }),
 
                       /// Right Circle Button
                       CircleAvatar(
                         radius: 22,
-                        backgroundColor: Color(0xFF101010),
+                        backgroundColor: Color(0xFF2F5D62),
                         child: IconButton(
                           icon: Icon(
                             Icons.arrow_forward_ios,
@@ -774,11 +821,9 @@ Widget dobPicker(IntroDetailsController c) {
       SizedBox(height: 20),
 
       /// AGE
-      Obx(() => Text("Age ${c.age}", style: RegMix)),
-
+      Obx(() => Text("Age ${c.age}", style: SemiMix)),
       SizedBox(height: 6),
-
-      Text("This can’t be changed later", style: RegSans),
+      Text("This can’t be changed later", style: RegSan),
     ],
   );
 }

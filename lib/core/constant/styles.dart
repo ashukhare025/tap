@@ -12,12 +12,7 @@ final TextExtraB = TextStyle(
 );
 
 // Poppins Font
-final TextLite = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w200,
-  fontSize: 14,
-  color: AppColors.colorBlack,
-);
+// fontWeight: FontWeight.w400,
 
 final TextRegular = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
@@ -25,113 +20,45 @@ final TextRegular = TextStyle(
   fontSize: 14,
   color: AppColors.colorBlack,
 );
-
-final TextMedium = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 14,
-  color: AppColors.colorBlack,
-);
-
-final TextSemiBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 14,
-  color: AppColors.colorBlack,
-);
-
-final TextBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 14,
-  color: AppColors.colorBlack,
-);
-
-final TextExtraBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w800,
-  fontSize: 14,
-  color: AppColors.colorBlack,
-);
-
 final TextRegula = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
   fontSize: 20,
   color: AppColors.colorGold,
 );
-
-final TextRegulaMedi = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 24,
-  color: AppColors.colorGold,
-);
-
-final TextRegulaMed = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 20,
-  color: AppColors.colorBlack,
-);
-
-final TextPoppoinsBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w800,
-  fontSize: 16,
-  color: AppColors.colorGold,
-);
-
-final TextPoppinsRegulaMed = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 20,
-  color: AppColors.colorGold,
-);
-
-final TextBoldPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 24,
-  color: AppColors.colorGold,
-);
-
-final PopiReg = TextStyle(
+final PopiRegBlue = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
-  fontSize: 10,
-  color: AppColors.colorGold,
+  fontSize: 16,
+  color: AppColors.colorBlue,
 );
-final PopiMed = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 10,
-  color: AppColors.colorGold,
-);
-
-final PopiBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 15,
-  color: AppColors.colorGold,
-);
-
-final PopiMedium = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 18,
-  color: AppColors.colorBlack,
-);
-
-final PopiRequ = TextStyle(
+final PopiReq = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
   fontSize: 14,
-  color: AppColors.colorGold,
+  color: AppColors.colorLW,
 );
-final MediumPopi = TextStyle(
+final popLWC = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
+  fontSize: 14,
+  color: AppColors.colorLW,
+);
+final popBC = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+  color: AppColors.colorBCColor,
+);
+final TextRegulaPopwhite = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
+  fontSize: 12,
+  color: AppColors.colorLightWhite,
+);
+final PopReg = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w400,
   fontSize: 16,
   color: AppColors.colorGold,
 );
@@ -142,254 +69,18 @@ final MediuPopi = TextStyle(
   fontSize: 16,
   color: AppColors.colorWhiteLight,
 );
-
-final MediumPopins = TextStyle(
+final PopiRequ = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 24,
+  fontWeight: FontWeight.w400,
+  fontSize: 14,
   color: AppColors.colorGold,
 );
-
-final MediumPopinsbold = TextStyle(
+final PopiReg = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 18,
-  color: AppColors.colorGold,
-);
-
-final MediumPopinsMedium = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 12,
-  color: AppColors.colorGold,
-);
-
-final MediumPopiMedium = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 20,
-  color: AppColors.colorGold,
-);
-
-final SemiBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 12,
-  color: AppColors.colorBlack,
-);
-
-final MediumPopiMed = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 18,
-  color: AppColors.colorGold,
-);
-
-final MediumPopiBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w400,
   fontSize: 10,
   color: AppColors.colorGold,
 );
-
-final SemiPoP = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 14,
-  color: AppColors.colorGold,
-);
-
-final SemiPopins = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 24,
-  color: AppColors.colorGold,
-);
-final ExLight = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w300,
-  fontSize: 16,
-  color: AppColors.colorBlack,
-);
-
-final SemiPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 20,
-  color: AppColors.colorBlack,
-);
-
-final SemiPopi = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 20,
-  color: AppColors.colorGold,
-);
-
-final lightPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w300,
-  fontSize: 18,
-  color: AppColors.colorGold,
-);
-
-final lightWeight = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w300,
-  fontSize: 14,
-  color: AppColors.colorGold,
-);
-
-final SemiBoldPopi = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 18,
-  color: AppColors.colorGold,
-);
-
-final SemiBoldPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 18,
-  color: AppColors.colorBlack,
-);
-
-final PopSemiBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 12,
-  color: AppColors.colorGold,
-);
-
-final TextRegulaPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 14,
-  color: AppColors.colorGold,
-);
-
-final BoldText = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 16,
-  color: AppColors.colorGold,
-);
-
-final PopBoldText = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 20,
-  color: AppColors.colorGold,
-);
-
-final PopBoldPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w700,
-  fontSize: 16,
-  color: AppColors.colorBlack,
-);
-
-final PopBoldPo = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 16,
-  color: AppColors.colorBlack,
-);
-
-final PopBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 16,
-  color: AppColors.colorGold,
-);
-final PopReg = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w400,
-  fontSize: 16,
-  color: AppColors.colorGold,
-);
-final PopLight = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w300,
-  fontSize: 16,
-  color: AppColors.colorGold,
-);
-
-final TextRegulaPopwhite = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w400,
-  fontSize: 12,
-  color: AppColors.colorLightWhite,
-);
-
-final TextRegulaPopBlack = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 12,
-  color: AppColors.colorBlack,
-);
-
-final popWhite = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 12,
-  color: AppColors.colorWhite,
-);
-
-final TextRegulaBlack = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 22,
-  color: AppColors.colorBlack,
-);
-final popLW = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 13,
-  color: AppColors.colorLW,
-);
-
-final poppinsLW = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 12,
-  color: AppColors.colorLW,
-);
-
-final SemiPopinsBlack = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 22,
-  color: AppColors.colorBlack,
-);
-final PopinsBold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.bold,
-  fontSize: 12,
-  color: AppColors.colorBlack,
-);
-
-final PopiMedBlue = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 14,
-  color: AppColors.colorBlue,
-);
-
-final PopiReq = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w400,
-  fontSize: 14,
-  color: AppColors.colorLW,
-);
-
-final PopiBoldBlue = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.bold,
-  fontSize: 12,
-  color: AppColors.colorBlue,
-);
-
 final poppinsReq = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
@@ -403,16 +94,9 @@ final TextRegulaPoBlack = TextStyle(
   fontSize: 14,
   color: AppColors.colorBlack,
 );
-
-final MediumPopMed = TextStyle(
+final RegPopRe = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 14,
-  color: AppColors.colorBlack,
-);
-final RegPop = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
   fontSize: 14,
   color: AppColors.colorWhiteLight,
 );
@@ -429,13 +113,6 @@ final RegReg = TextStyle(
   fontSize: 16,
   color: AppColors.colorBlack,
 );
-final PopSemi = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 13,
-  color: AppColors.colorBlack,
-);
-
 final popReq = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
@@ -443,26 +120,12 @@ final popReq = TextStyle(
   color: AppColors.colorLW,
 );
 
-final PopMed = TextStyle(
+final popReqBC = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
   fontSize: 16,
-  color: AppColors.colorBlack,
+  color: AppColors.colorBCColor,
 );
-final PopMedWhi = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w500,
-  fontSize: 14,
-  color: AppColors.colorWhite,
-);
-
-final PopSemiBol = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 24,
-  color: AppColors.colorBlack,
-);
-
 final PopRegu = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w400,
@@ -475,20 +138,6 @@ final Regpop = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 12,
   color: AppColors.colorLW,
-);
-
-final PopSemibold = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 14,
-  color: AppColors.colorWhite,
-);
-
-final PopSemibol = TextStyle(
-  fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
-  fontSize: 16,
-  color: AppColors.colorBlack,
 );
 
 final PopRe = TextStyle(
@@ -511,12 +160,67 @@ final PopReGu = TextStyle(
   fontSize: 16,
   color: AppColors.colorWhite,
 );
-
-final PopSemiBo = TextStyle(
+final PopLigh = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w400,
+  fontSize: 14,
+  color: AppColors.colorLightWhite,
+);
+
+// fontWeight: FontWeight.w200,
+
+final TextLite = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w200,
   fontSize: 14,
   color: AppColors.colorBlack,
+);
+
+// fontWeight: FontWeight.w500,
+
+final PopiMedBlue = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorBlue,
+);
+final PopiBlue = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  color: AppColors.colorBlue,
+);
+
+final MediumPopMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
+
+final MediumBMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  color: AppColors.colorBCColor,
+);
+final RegPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorWhiteLight,
+);
+final PopMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
+final PopMedWhi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorWhite,
 );
 final PopMedi = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
@@ -552,11 +256,380 @@ final MediumPopiMedi = TextStyle(
   fontSize: 20,
   color: AppColors.colorWhite,
 );
+final TextMedium = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
+final TextRegulaMedi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 24,
+  color: AppColors.colorGold,
+);
+
+final TextRegulaMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 20,
+  color: AppColors.colorBlack,
+);
+
+final TextRegulaPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: AppColors.colorGold,
+);
+
+final TextRegulaPopBlack = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 12,
+  color: AppColors.colorBlack,
+);
+
+final popWhite = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 12,
+  color: AppColors.colorWhite,
+);
+
+final TextRegulaBlack = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 22,
+  color: AppColors.colorBlack,
+);
+final popLW = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 13,
+  color: AppColors.colorLW,
+);
+
+final poppinsLW = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 12,
+  color: AppColors.colorLW,
+);
+final TextPoppinsRegulaMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 20,
+  color: AppColors.colorGold,
+);
+
+final PopiMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 10,
+  color: AppColors.colorGold,
+);
+
+final PopiMedium = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 18,
+  color: AppColors.colorBlack,
+);
+
+final MediumPopi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  color: AppColors.colorGold,
+);
+
+final MediumPopins = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 24,
+  color: AppColors.colorGold,
+);
+final MediumPopinsMedium = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 12,
+  color: AppColors.colorGold,
+);
+final MediumPopiMed = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 18,
+  color: AppColors.colorGold,
+);
+final MediumPopiMedium = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 20,
+  color: AppColors.colorGold,
+);
+
+// fontWeight: FontWeight.w600,
+
+final SemiPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 20,
+  color: AppColors.colorBlack,
+);
+
+final SemiPopi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 20,
+  color: AppColors.colorGold,
+);
+
+final SemiPopins = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 24,
+  color: AppColors.colorGold,
+);
+final SemiBoldPopi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 18,
+  color: AppColors.colorGold,
+);
+
+final SemiBoldPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 18,
+  color: AppColors.colorBlack,
+);
+final PopBoldPo = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
+final SemiPopinsBlack = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 22,
+  color: AppColors.colorBlack,
+);
+final PopBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  color: AppColors.colorGold,
+);
+
+final PopSemi = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 13,
+  color: AppColors.colorBlack,
+);
+
+final PopSemiB = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 13,
+  color: AppColors.colorWhiteLight,
+);
+
+final PopSemiBol = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 24,
+  color: AppColors.colorBlack,
+);
+
+final PopSemibold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+  color: AppColors.colorWhite,
+);
+
+final PopSemibol = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
+
+final PopSemiblc = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  color: AppColors.colorBLColor,
+);
+
+final PopSemiBo = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
+final TextSemiBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
+final SemiBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 12,
+  color: AppColors.colorBlack,
+);
+final SemiPoP = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+  color: AppColors.colorGold,
+);
+
+//fontWeight: FontWeight.w700,
+
+final TextBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
+
+final TextBoldPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 24,
+  color: AppColors.colorGold,
+);
+
+final PopiBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 15,
+  color: AppColors.colorGold,
+);
+
+final MediumPopinsbold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 18,
+  color: AppColors.colorGold,
+);
+
+final MediumPopiBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 10,
+  color: AppColors.colorGold,
+);
+
+final PopSemiBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 12,
+  color: AppColors.colorGold,
+);
+
+final BoldText = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 16,
+  color: AppColors.colorGold,
+);
+
+final PopBoldText = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 20,
+  color: AppColors.colorGold,
+);
+
+final PopBoldPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
+final PopinBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 14,
+  color: AppColors.colorWhiteLight,
+);
+final PopinPiBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 12,
+  color: AppColors.colorPiColor,
+);
+
+//  fontWeight: FontWeight.w300,
+final PopLight = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w300,
+  fontSize: 16,
+  color: AppColors.colorGold,
+);
+final ExLight = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w300,
+  fontSize: 16,
+  color: AppColors.colorBlack,
+);
+
+final lightPop = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w300,
+  fontSize: 18,
+  color: AppColors.colorGold,
+);
 final PopLig = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w300,
   fontSize: 10,
   color: AppColors.colorLight,
+);
+final lightWeight = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w300,
+  fontSize: 14,
+  color: AppColors.colorGold,
+);
+
+// fontWeight: FontWeight.w800,
+
+final TextExtraBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w800,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
+
+final TextPoppoinsBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w800,
+  fontSize: 16,
+  color: AppColors.colorGold,
+);
+
+// BOLD
+
+final PopinsBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.bold,
+  fontSize: 12,
+  color: AppColors.colorBlack,
+);
+
+final PopiBoldBlue = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.bold,
+  fontSize: 12,
+  color: AppColors.colorBlue,
 );
 
 // Circular Std Font
@@ -618,20 +691,39 @@ final RegMix = TextStyle(
   fontSize: 18,
   color: AppColors.colorWhiteLight,
 );
-
+final SemiMix = TextStyle(
+  fontFamily: AppConstants.fontFamily_WorkSans,
+  fontWeight: FontWeight.w600,
+  fontSize: 20,
+  color: AppColors.colorWhiteLight,
+);
 final RegSans = TextStyle(
   fontFamily: AppConstants.fontFamily_WorkSans,
   fontWeight: FontWeight.w400,
   fontSize: 12,
   color: AppColors.colorBlack,
 );
+final RegSan = TextStyle(
+  fontFamily: AppConstants.fontFamily_WorkSans,
+  fontWeight: FontWeight.w400,
+  fontSize: 14,
+  color: AppColors.colorBlack,
+);
 
 // Caros Font
+
 final Caros = TextStyle(
   fontFamily: AppConstants.fontFamily_Caros,
   fontWeight: FontWeight.bold,
   fontSize: 60,
   color: AppColors.colorWhite,
+);
+
+final CarosBold = TextStyle(
+  fontFamily: AppConstants.fontFamily_Caros,
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+  color: AppColors.colorBLColor,
 );
 
 final PopReCaros = TextStyle(
@@ -789,4 +881,11 @@ final InterMed = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 16,
   color: AppColors.colorBlack,
+);
+
+final InterBC = TextStyle(
+  fontFamily: AppConstants.fontFamily_Inter,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  color: AppColors.colorBCColor,
 );

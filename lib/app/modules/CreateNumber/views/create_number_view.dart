@@ -15,7 +15,10 @@ class CreateNumberView extends GetView<CreateNumberController> {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios),
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 21),
+            child: Icon(Icons.arrow_back_ios),
+          ),
         ),
       ),
       body: SafeArea(
@@ -31,7 +34,7 @@ class CreateNumberView extends GetView<CreateNumberController> {
                       child: Text(
                         textAlign: TextAlign.start,
                         'Can we get your number please?',
-                        style: TextRegulaBlack,
+                        style: PopSemiBol,
                       ),
                     ),
                     SizedBox(height: 20),
@@ -40,7 +43,7 @@ class CreateNumberView extends GetView<CreateNumberController> {
                       child: Text(
                         textAlign: TextAlign.start,
                         "We only use phone numbers to make sure everyone on Tap is real.",
-                        style: popLW,
+                        style: popLWC,
                       ),
                     ),
                     SizedBox(height: 30),
@@ -49,7 +52,7 @@ class CreateNumberView extends GetView<CreateNumberController> {
                       child: Text(
                         textAlign: TextAlign.start,
                         "Mobile Number",
-                        style: TextRegulaPoBlack,
+                        style: popBC,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -133,7 +136,7 @@ class CreateNumberView extends GetView<CreateNumberController> {
                                       horizontal: 12,
                                     ),
                                     hintText: "9522148377",
-                                    hintStyle: TextRegulaPopBlack,
+                                    hintStyle: InterBC,
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(12),
                                       borderSide: BorderSide(
@@ -169,7 +172,32 @@ class CreateNumberView extends GetView<CreateNumberController> {
                         ),
                       ),
                     ),
-
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Obx(
+                        () => Align(
+                          alignment: Alignment.centerLeft,
+                          child: Row(
+                            children: [
+                              Checkbox(
+                                value: controller.isChecked.value,
+                                visualDensity: VisualDensity.compact,
+                                onChanged: (value) {
+                                  controller.isChecked.value = value!;
+                                },
+                              ),
+                              Text("I agree to the ", style: RegReg),
+                              Text(
+                                "Term & Conditions*",
+                                style: PopMed.copyWith(
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                     SizedBox(height: 20),
                   ],
                 ),
@@ -190,14 +218,23 @@ class CreateNumberView extends GetView<CreateNumberController> {
                     backgroundColor: Color(0XFFD9D9D9),
                     child: IconButton(
                       onPressed: () {
-                        if (controller.formKey.currentState!.validate()) {
-                          controller.showSimplePopup(); // only when valid
-                        } else {
+                        if (!controller.formKey.currentState!.validate()) {
                           Get.snackbar(
                             "Error",
                             "Please enter valid mobile number",
                           );
+                          return;
                         }
+
+                        if (!controller.isChecked.value) {
+                          Get.snackbar(
+                            "Terms Required",
+                            "Please agree to Terms & Conditions",
+                          );
+                          return;
+                        }
+
+                        controller.showSimplePopup();
                       },
 
                       icon: Icon(Icons.arrow_forward_ios),

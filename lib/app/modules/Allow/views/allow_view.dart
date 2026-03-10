@@ -46,13 +46,13 @@ class AllowView extends GetView<AllowController> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset("assets/image/bell.png", height: 110, width: 110),
+                  Image.asset("assets/image/bell.png", height: 103, width: 103),
                   SizedBox(height: 20),
                   Text("Don’t miss a beat, or a match", style: PopSemiBol),
                   SizedBox(height: 10),
                   Text(
                     "Turn on your notifications so we can let you know when you have new Knocks, retain, or messages.",
-                    style: PopMedium,
+                    style: popLWC,
                   ),
                 ],
               ),
@@ -65,7 +65,7 @@ class AllowView extends GetView<AllowController> {
             height: 48,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0XFF000000),
+                backgroundColor: Color(0XFFE07A5F),
               ),
               onPressed: controller.nextPage,
               child: Text("Allow notification", style: PopMediu),
@@ -94,7 +94,7 @@ class AllowView extends GetView<AllowController> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset("assets/image/map.png", height: 110, width: 110),
+                  Image.asset("assets/image/map.png", height: 103, width: 103),
                   SizedBox(height: 20),
                   Text(
                     "Allow location to discover matches and moments happening close to you.",
@@ -103,7 +103,7 @@ class AllowView extends GetView<AllowController> {
                   SizedBox(height: 10),
                   Text(
                     "Turn on your location so we can \nfind nearby matches. Your location \nis never shared.",
-                    style: PopMedium,
+                    style: popLWC,
                   ),
                 ],
               ),
@@ -116,7 +116,7 @@ class AllowView extends GetView<AllowController> {
             height: 48,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0XFF000000),
+                backgroundColor: Color(0XFFE07A5F),
               ),
               onPressed: controller.nextPage,
               child: Text("Allow notification", style: PopMediu),

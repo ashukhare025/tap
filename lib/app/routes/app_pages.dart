@@ -30,6 +30,16 @@ import '../modules/social/bindings/social_binding.dart';
 import '../modules/social/views/social_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/updateGender/bindings/update_gender_binding.dart';
+import '../modules/updateGender/views/update_gender_view.dart';
+import '../modules/updateHabits/bindings/update_habits_binding.dart';
+import '../modules/updateHabits/views/update_habits_view.dart';
+import '../modules/updateLanguage/bindings/update_language_binding.dart';
+import '../modules/updateLanguage/views/update_language_view.dart';
+import '../modules/updatePersonality/bindings/update_personality_binding.dart';
+import '../modules/updatePersonality/views/update_personality_view.dart';
+import '../modules/updateRelation/bindings/update_relation_binding.dart';
+import '../modules/updateRelation/views/update_relation_view.dart';
 import '../modules/vibes/bindings/vibes_binding.dart';
 import '../modules/vibes/views/vibes_view.dart';
 
@@ -78,11 +88,7 @@ class AppPages {
       page: () => const VibesView(),
       binding: VibesBinding(),
     ),
-    GetPage(
-      name: Routes.map,
-      page: () => const MapView(),
-      binding: MapBinding(),
-    ),
+    GetPage(name: Routes.map, page: () => MapView(), binding: MapBinding()),
     GetPage(
       name: Routes.social,
       page: () => const SocialView(),
@@ -112,6 +118,31 @@ class AppPages {
       name: Routes.discover,
       page: () => const DiscoverView(),
       binding: DiscoverBinding(),
+    ),
+    GetPage(
+      name: Routes.updateGender,
+      page: () => const UpdateGenderView(),
+      binding: UpdateGenderBinding(),
+    ),
+    GetPage(
+      name: Routes.updateHabits,
+      page: () => const UpdateHabitsView(),
+      binding: UpdateHabitsBinding(),
+    ),
+    GetPage(
+      name: Routes.updateRelation,
+      page: () => const UpdateRelationView(),
+      binding: UpdateRelationBinding(),
+    ),
+    GetPage(
+      name: Routes.updatePersonality,
+      page: () => const UpdatePersonalityView(),
+      binding: UpdatePersonalityBinding(),
+    ),
+    GetPage(
+      name: Routes.updateLanguage,
+      page: () => const UpdateLanguageView(),
+      binding: UpdateLanguageBinding(),
     ),
   ];
 }

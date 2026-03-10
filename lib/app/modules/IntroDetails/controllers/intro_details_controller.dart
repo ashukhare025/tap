@@ -315,7 +315,7 @@ class IntroDetailsController extends GetxController {
   void pickImage(int index) {
     Get.bottomSheet(
       Container(
-        height: 295,
+        height: 300,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Get.theme.scaffoldBackgroundColor,
@@ -325,7 +325,18 @@ class IntroDetailsController extends GetxController {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 10),
-            Text("Add Photo", style: PopSemibol),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Add Photo", style: PopSemiblc),
+                GestureDetector(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Icon(Icons.close, size: 24),
+                ),
+              ],
+            ),
             SizedBox(height: 10),
             Text("Try to find ones that show off your smile.", style: Regpop),
             SizedBox(height: 20),
@@ -339,7 +350,7 @@ class IntroDetailsController extends GetxController {
                 ),
                 child: Icon(Icons.camera_alt, size: 24),
               ),
-              title: Text("Camera"),
+              title: Text("Camera", style: CarosBold),
               onTap: () async {
                 Get.back();
                 final XFile? image = await _picker.pickImage(
@@ -361,7 +372,7 @@ class IntroDetailsController extends GetxController {
                 ),
                 child: Icon(Icons.photo, size: 24),
               ),
-              title: Text("Media"),
+              title: Text("Media", style: CarosBold),
               subtitle: Text("Share photos and videos", style: BookReg),
               onTap: () async {
                 Get.back();
@@ -494,4 +505,24 @@ class IntroDetailsController extends GetxController {
     {'title': "Divorced", 'svgName': 'broken-heart'},
     {'title': "Widowed", 'svgName': 'elder'},
   ];
+
+  //
+  RxInt selectedIndex = 0.obs;
+  List<String> moods = ["Calm", "Social", "Romantic", "Adventure", "Growth"];
+
+  RxString selectedTab = "Calm".obs;
+  // ------------------------------
+  // Energy / Interests Category
+  // ------------------------------
+
+  Map<String, List<String>> vibeCategories = {
+    "Calm": ["Calm", "Peaceful", "Cozy", "Nature"],
+    "Social": ["Party", "Dance", "Loud Music", "Fun", "Outgoing", "Goofy"],
+    "Romantic": ["Romantic", "Deep Talks"],
+    "Adventure": ["Spontaneous", "Adrenaline Junkie", "Travel Buff"],
+  };
+
+  void changeTab(String tab) {
+    selectedTab.value = tab;
+  }
 }

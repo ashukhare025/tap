@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../../core/constant/app_constants.dart';
 import '../../../../core/constant/styles.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/otp_controller.dart';
@@ -30,7 +31,7 @@ class OtpView extends GetView<OtpController> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 21),
-                      child: Text('Verify your number', style: SemiPopinsBlack),
+                      child: Text('Verify your number', style: PopSemiBol),
                     ),
                     SizedBox(height: 20),
                     Padding(
@@ -38,15 +39,20 @@ class OtpView extends GetView<OtpController> {
                       child: Obx(
                         () => Text(
                           "Enter the code we’ve sent by text to\n${controller.mobileNumber.value}",
-                          style: TextStyle(fontSize: 18),
-                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: AppConstants.fontFamily_Poppins,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0XFF525252),
+                          ),
+                          // textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                     SizedBox(height: 30),
                     Padding(
                       padding: const EdgeInsets.only(left: 21),
-                      child: Text("Verify Otp", style: TextRegulaPopBlack),
+                      child: Text("Verify OTP", style: popBC),
                     ),
                     SizedBox(height: 10),
                     Form(
@@ -101,7 +107,6 @@ class OtpView extends GetView<OtpController> {
                         }),
                       ),
                     ),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -109,15 +114,30 @@ class OtpView extends GetView<OtpController> {
                           onPressed: () {},
                           child: Text(
                             "Edit Phone Number?",
-                            style: PopinsBold.copyWith(
+                            style: PopinBold.copyWith(
                               decorationColor: Color(0xff525252),
                               decoration: TextDecoration.underline,
                             ),
                           ),
                         ),
+                        SizedBox(width: 110),
+                        Image.asset(
+                          "assets/image/timerwatch.png",
+                          width: 16,
+                          height: 16,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Text("00:45", style: TextMedium),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
                         TextButton(
                           onPressed: () {},
-                          child: Text("Send again", style: PopiBoldBlue),
+                          child: Text("Resend", style: PopinPiBold),
                         ),
                       ],
                     ),

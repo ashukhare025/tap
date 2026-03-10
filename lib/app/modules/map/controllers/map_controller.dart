@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapController extends GetxController {
-  //TODO: Implement MapController
+  var markers = <Marker>{}.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final initialPosition = LatLng(22.7196, 75.8577);
+
+  void addMarker(LatLng position, String id, String title) {
+    final newMarker = Marker(
+      markerId: MarkerId(id),
+      position: position,
+      infoWindow: InfoWindow(title: title),
+    );
+    markers.add(newMarker);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

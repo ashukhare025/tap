@@ -16,24 +16,26 @@ class OnboardingView extends GetView<OnboardingController> {
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0XFF000E08),
-                Color(0XFF43116A).withOpacity(1),
-                Color(0XFF101010),
-              ],
-              stops: [0.10, 0.30, 0.50],
-            ),
+            color: Color(0XFF2F5D62),
+            // gradient: LinearGradient(
+            //   begin: Alignment.topLeft,
+            //   end: Alignment.bottomRight,
+            //   colors: [
+            //     Color(0XFF000E08),
+            //     Color(0XFF43116A).withOpacity(1),
+            //     Color(0XFF101010),
+            //   ],
+            //   stops: [0.10, 0.30, 0.50],
+            // ),
           ),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 20),
                 Center(
                   child: Image.asset(
-                    "assets/image/tap.png",
+                    "assets/image/Tap Logo icon svg 1.png",
                     color: Color(0XFFFFFFFF),
                     height: 62,
                     width: 43,
@@ -53,7 +55,7 @@ class OnboardingView extends GetView<OnboardingController> {
                   child: Text(
                     textAlign: TextAlign.start,
                     "Our Tap app is the perfect way to stay\nconnected with friends and family.",
-                    style: TextRegulaPopwhite,
+                    style: PopLigh,
                   ),
                 ),
                 SizedBox(height: 40),
@@ -68,7 +70,7 @@ class OnboardingView extends GetView<OnboardingController> {
                           height: 48,
                           width: 327,
                           child: Material(
-                            color: Colors.white,
+                            color: Color(0xFFE07A5F),
                             borderRadius: BorderRadius.circular(12),
                             child: InkWell(
                               borderRadius: BorderRadius.circular(12),
@@ -78,7 +80,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               child: Center(
                                 child: Text(
                                   "Create an account",
-                                  style: TextRegulaPopBlack,
+                                  style: PopMediu,
                                 ),
                               ),
                             ),
@@ -95,6 +97,7 @@ class OnboardingView extends GetView<OnboardingController> {
                             // action
                           },
                           style: TextButton.styleFrom(
+                            backgroundColor: Color(0xFFF7F6F3),
                             padding: EdgeInsets.zero,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -104,10 +107,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               ),
                             ),
                           ),
-                          child: Text(
-                            "I have an account",
-                            style: TextRegulaPopwhite,
-                          ),
+                          child: Text("I have an account", style: PopMed),
                         ),
                       ),
                       SizedBox(height: 20),
@@ -115,7 +115,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Term & Condition,", style: TextRegulaPopwhite),
+                          Text("Term & Condition,", style: PopLigh),
                           SizedBox(width: 5),
                           TextButton(
                             style: TextButton.styleFrom(
@@ -124,7 +124,7 @@ class OnboardingView extends GetView<OnboardingController> {
                             onPressed: () {},
                             child: Text(
                               "Private Policy",
-                              style: popWhite.copyWith(
+                              style: PopLigh.copyWith(
                                 decorationColor: Color(0xffffffff),
                                 decoration: TextDecoration.underline,
                               ),
