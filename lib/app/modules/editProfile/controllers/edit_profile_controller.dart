@@ -14,18 +14,18 @@ class EditProfileController extends GetxController {
   TextEditingController facebookController = TextEditingController();
 
   var openDropdown = "".obs;
-  RxString gender = "Man".obs;
-  RxString relationship = "Single".obs;
-  RxString personality = "Introvert".obs;
-  RxString language = "English".obs;
-  RxString smoke = "Non-smoker".obs;
-  RxString drink = "Occasionally".obs;
+  RxString gender = "".obs;
+  RxString relationship = "".obs;
+  RxString personality = "".obs;
+  RxString language = "".obs;
+  RxString smoke = "".obs;
+  RxString drink = "".obs;
 
   final List<String> genderOptions = ["Man", "Woman", "Other"];
   final List<String> relationshipOptions = ["Single", "Married", "Divorced"];
   final List<String> personalityOptions = ["Introvert", "Extrovert"];
   final List<String> languageOption = ["English", "Hindi"];
-  final List<String> smokeOption = ["Non-smoker", "smoker"];
+  final List<String> smokeOption = ["Non-smoker", "smoker", "Trying to quit"];
   final List<String> drinkOption = ["Occasionally", "Regularly"];
 
   // image camera Gallery
@@ -101,6 +101,7 @@ class EditProfileController extends GetxController {
 
   @override
   void onInit() {
+    super.onInit();
     final profile = Get.find<ProfileController>();
 
     nameController.text = profile.name.value;
@@ -123,8 +124,6 @@ class EditProfileController extends GetxController {
     }
 
     selectedDate.value = profile.selectedDate.value;
-
-    super.onInit();
   }
 }
 
@@ -132,8 +131,8 @@ class EditProfileController extends GetxController {
 Widget profileRow({
   required String title,
   required RxString value,
-  required List<String> options,
   required EditProfileController controller,
+  required String route,
 }) {
   return Column(
     children: [
@@ -147,25 +146,17 @@ Widget profileRow({
               Text(title, style: PopMed),
 
               /// Value + Icon
-              GestureDetector(
-                onTap: () {
-                  // Toggle dropdown for this row
-                  controller.openDropdown.value =
-                      controller.openDropdown.value == title ? "" : title;
-                },
-                child: Row(
-                  children: [
-                    Text(
-                      value.value,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(width: 5),
-                    Icon(Icons.arrow_forward_ios, size: 15),
-                  ],
-                ),
+              Row(
+                children: [
+                  Text(value.value, style: PopMed),
+                  SizedBox(width: 5),
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(route);
+                    },
+                    child: Icon(Icons.arrow_forward_ios, size: 15),
+                  ),
+                ],
               ),
             ],
           ),
@@ -173,29 +164,29 @@ Widget profileRow({
       ),
 
       /// Dropdown Options
-      Obx(
-        () => controller.openDropdown.value == title
-            ? Column(
-                children: options.map((opt) {
-                  return GestureDetector(
-                    onTap: () {
-                      value.value = opt;
-                      controller.openDropdown.value = ""; // close dropdown
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      color: Colors.grey[200],
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 12,
-                      ),
-                      child: Text(opt),
-                    ),
-                  );
-                }).toList(),
-              )
-            : SizedBox(),
-      ),
+      // Obx(
+      //   () => controller.openDropdown.value == title
+      //       ? Column(
+      //           children: options.map((opt) {
+      //             return GestureDetector(
+      //               onTap: () {
+      //                 value.value = opt;
+      //                 controller.openDropdown.value = ""; // close dropdown
+      //               },
+      //               child: Container(
+      //                 width: double.infinity,
+      //                 color: Colors.grey[200],
+      //                 padding: EdgeInsets.symmetric(
+      //                   horizontal: 24,
+      //                   vertical: 12,
+      //                 ),
+      //                 child: Text(opt),
+      //               ),
+      //             );
+      //           }).toList(),
+      //         )
+      //       : SizedBox(),
+      // ),
     ],
   );
 }

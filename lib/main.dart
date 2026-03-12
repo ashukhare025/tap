@@ -3,12 +3,14 @@ import 'package:get/get.dart';
 import 'package:tap/language/translations.dart';
 
 import 'app/bottom_nevi/bottom_navi.dart';
+import 'app/modules/editProfile/controllers/edit_profile_controller.dart';
 import 'app/modules/profile/controllers/profile_controller.dart';
 import 'app/modules/profile/views/profile_view.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
   Get.put(ProfileController());
+  Get.put(EditProfileController(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -21,12 +23,12 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tap',
-      initialRoute: Routes.updateLanguage,
+      // initialRoute: Routes.updateGender,
       getPages: AppPages.routes,
       translations: AppTranslations(),
       locale: Locale('en', 'US'),
       fallbackLocale: Locale('en', 'US'),
-      // home: BottomNavView(),
+      home: BottomNavView(),
     );
   }
 }

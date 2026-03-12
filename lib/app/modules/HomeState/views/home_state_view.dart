@@ -4,6 +4,7 @@ import 'package:latlong2/latlong.dart';
 import '../../../../core/constant/styles.dart';
 import '../../../../widget/categories_widget.dart';
 import '../../../../widget/home_state_widget.dart';
+import '../../../routes/app_pages.dart';
 import '../../home/controllers/home_controller.dart';
 import '../controllers/home_state_controller.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -18,93 +19,56 @@ class HomeStateView extends GetView<HomeStateController> {
           slivers: [
             /// IMAGE APP BAR
             SliverAppBar(
-              expandedHeight: 150,
-              pinned: true,
-              backgroundColor: Colors.white,
+              toolbarHeight: 400,
+              backgroundColor: Colors.transparent,
               elevation: 0,
-
-              title: GestureDetector(
-                onTap: () {
-                  print("Change location");
-                },
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.location_on_outlined,
-                      color: Color(0XFFABAAB3),
-                      size: 22,
-                    ),
-                    SizedBox(width: 5),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Indore India", style: PopMedium),
-
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text("Change", style: PopMdm),
-                            Icon(
-                              Icons.keyboard_arrow_down,
-                              size: 20,
-                              color: Color(0XFFABAAB3),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+              flexibleSpace: ClipRRect(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(20),
                 ),
-              ),
-              actions: [
-                Icon(Icons.favorite_border, size: 24),
-                SizedBox(width: 10),
-                Icon(Icons.notifications_none, size: 24),
-                SizedBox(width: 10),
-                Padding(
-                  padding: EdgeInsets.only(right: 18),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("Profile clicked");
-                    },
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: NetworkImage(
-                        "https://i.pravatar.cc/150?img=3",
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-
-              flexibleSpace: FlexibleSpaceBar(
-                collapseMode: CollapseMode.parallax,
-                background: Stack(
-                  fit: StackFit.expand,
-
+                child: Stack(
                   children: [
-                    /// Background Image
-                    ///
-                    Image.asset("assets/image/arjit.jpg", fit: BoxFit.cover),
+                    // Background image
+                    Image.asset(
+                      "assets/image/arjit.jpg",
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
+                    ),
+                    // Leading icon
                     Positioned(
-                      top: 100,
+                      top: 40,
                       left: 10,
                       child: GestureDetector(
-                        onTap: () {
-                          Get.back();
-                        },
-                        child: const Icon(
-                          Icons.arrow_back,
-                          color: Colors.black,
+                        onTap: () => Get.back(),
+                        child: Icon(
+                          Icons.arrow_back_outlined,
+                          color: Colors.white,
                           size: 28,
                         ),
                       ),
                     ),
-
-                    /// Gradient overlay (for text visibility)
+                    // Action icon
+                    Positioned(
+                      top: 40,
+                      right: 10,
+                      child: Container(
+                        height: 32,
+                        width: 32,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xFFFFBB1D),
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.star,
+                          color: Color(0xFFFFBB1D),
+                          size: 20,
+                        ),
+                      ),
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -118,8 +82,6 @@ class HomeStateView extends GetView<HomeStateController> {
                         ),
                       ),
                     ),
-
-                    /// Location Text
                   ],
                 ),
               ),
@@ -130,20 +92,177 @@ class HomeStateView extends GetView<HomeStateController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 15),
-
-                  /// Buttons (Live stats / Write Review)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _chipButton("Live stats", true),
-                      SizedBox(width: 5),
-                      _chipButton("Write Review", false),
-                      SizedBox(width: 5),
-                      _chipButton("Browse Gallery", false),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _chipButton("Live stats", true),
+                          SizedBox(width: 5),
+                          _chipButton("Write Review", false),
+                          SizedBox(width: 5),
+                          _chipButton("Browse Gallery", false),
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Sat, 22 Nov, 7:00PM ", style: RobMed),
+                            SizedBox(height: 6),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    "Arijit Singh -| Am Home IndiaTour\n2025-26 | Indore",
+                                    style: PopMedium,
+                                  ),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          height: 20,
+                                          width: 20,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFF2F5D62),
+                                            borderRadius: BorderRadius.circular(
+                                              6,
+                                            ),
+                                          ),
+                                          child: Icon(
+                                            Icons.star,
+                                            size: 14,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        SizedBox(width: 5),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                            right: 10,
+                                          ),
+                                          child: Text(
+                                            "4.1".toString(),
+                                            style: PopMedi,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                              style: Regpop,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 13),
+                    child: SizedBox(
+                      width: 330.17,
+                      height: 48,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0XFFE07A5F),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder: (context) {
+                              return Dialog(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Container(
+                                  width: 350,
+                                  height: 260,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Color(0XFFFFFFFF),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 10),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            "assets/image/premium.png",
+                                            height: 32,
+                                            width: 32,
+                                          ),
+                                          SizedBox(width: 5),
+                                          Text(
+                                            "Premium Unlocked",
+                                            style: SemiBoldPop,
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 20),
+                                      Text(
+                                        "Congrats you got free premium membership feature",
+                                        textAlign: TextAlign.center,
+                                        style: TextRegulaPopBlack,
+                                      ),
+                                      SizedBox(height: 20),
+
+                                      /// Feature List
+                                      featureItem("Unlimited Knocks"),
+                                      featureItem("Unlimited Check-ins"),
+                                      featureItem("Unlimited Retains"),
+                                      Divider(height: 30, thickness: 1),
+                                      GestureDetector(
+                                        onTap: () {
+                                          Get.toNamed(Routes.checkFailed);
+                                        },
+                                        child: Container(
+                                          width: 180,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                            color: Color(0XFFE07A5F),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              textAlign: TextAlign.center,
+                                              "Continue",
+                                              style: PopSemibold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Text("Check In", style: PopMediu),
+                      ),
+                    ),
+                  ),
 
                   /// Your Live Crowd Card
                   homeState(Get.find<HomeController>()),
@@ -177,10 +296,6 @@ class HomeStateView extends GetView<HomeStateController> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text("Contact", style: InterBol),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Text("+91 9522143877", style: InterMed),
                       ),
                     ],
                   ),
@@ -242,6 +357,19 @@ Widget _chipButton(String text, bool selected) {
         color: selected ? Colors.white : Colors.black,
         fontWeight: FontWeight.w500,
       ),
+    ),
+  );
+}
+
+Widget featureItem(String text) {
+  return Padding(
+    padding: EdgeInsets.only(left: 21),
+    child: Row(
+      children: [
+        Icon(Icons.check_circle, color: Colors.lightGreen, size: 14),
+        SizedBox(width: 8),
+        Text(text, style: TextRegulaPopBlack),
+      ],
     ),
   );
 }

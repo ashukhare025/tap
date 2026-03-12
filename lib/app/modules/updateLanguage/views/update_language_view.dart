@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/constant/styles.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/update_language_controller.dart';
 
 class UpdateLanguageView extends GetView<UpdateLanguageController> {
@@ -12,7 +13,12 @@ class UpdateLanguageView extends GetView<UpdateLanguageController> {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: Icon(Icons.arrow_back_ios),
+        ),
         backgroundColor: Color(0xFFFFFFFF),
       ),
       body: SafeArea(

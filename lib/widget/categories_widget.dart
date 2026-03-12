@@ -24,10 +24,10 @@ class CategoryChips extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? const Color(0xFF6A1B9A)
+                      ? const Color(0xFF2F5D62)
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.black, width: 1.2),
+                  border: Border.all(color: Color(0XFF8C6DA3), width: 1),
                 ),
                 child: Text(
                   controller.categories[index],

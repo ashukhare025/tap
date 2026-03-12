@@ -23,4 +23,6 @@ abstract class Routes {
   static const updateRelation = '/update-relation';
   static const updatePersonality = '/update-personality';
   static const updateLanguage = '/update-language';
+  static const liveCrowd = "/liveCrowd";
+  static const checkFailed = "/checkFailed";
 }

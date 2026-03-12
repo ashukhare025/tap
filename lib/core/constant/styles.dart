@@ -225,14 +225,36 @@ final PopMedWhi = TextStyle(
 final PopMedi = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w500,
-  fontSize: 12,
+  fontSize: 8,
   color: AppColors.colorBlack,
 );
+
+final PopM = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 10,
+  color: AppColors.colorBlack,
+);
+final PopWh = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 10,
+  color: AppColors.colorWhite,
+);
+
+
 
 final PopMedium = TextStyle(
   fontFamily: AppConstants.fontFamily_Poppins,
   fontWeight: FontWeight.w500,
   fontSize: 14,
+  color: AppColors.colorBlack,
+);
+
+final PopMe = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w500,
+  fontSize: 10,
   color: AppColors.colorBlack,
 );
 
@@ -489,6 +511,13 @@ final SemiPoP = TextStyle(
   fontSize: 14,
   color: AppColors.colorGold,
 );
+final SemiPo = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w600,
+  fontSize: 11,
+  color: AppColors.colorBlack,
+);
+
 
 //fontWeight: FontWeight.w700,
 
@@ -511,6 +540,12 @@ final PopiBold = TextStyle(
   fontWeight: FontWeight.w700,
   fontSize: 15,
   color: AppColors.colorGold,
+);
+final PopiBol = TextStyle(
+  fontFamily: AppConstants.fontFamily_Poppins,
+  fontWeight: FontWeight.w700,
+  fontSize: 12,
+  color: AppColors.colorBlack,
 );
 
 final MediumPopinsbold = TextStyle(

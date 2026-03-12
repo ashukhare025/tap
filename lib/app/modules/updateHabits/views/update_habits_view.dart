@@ -10,7 +10,14 @@ class UpdateHabitsView extends GetView<UpdateHabitsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: Icon(Icons.arrow_back_ios)),
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: Icon(Icons.arrow_back_ios),
+        ),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,114 +26,70 @@ class UpdateHabitsView extends GetView<UpdateHabitsController> {
             padding: const EdgeInsets.only(left: 21),
             child: Text("Update your Habits", style: PopSemiBol),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 20),
           Padding(
-            padding: const EdgeInsets.only(left: 21),
+            padding: EdgeInsets.only(left: 21),
             child: Text(
               "Do their habits match yours? You go first.",
               style: PopiReq,
             ),
           ),
           SizedBox(height: 30),
+          // ✅ DRINK SECTION
           Padding(
-            padding: const EdgeInsets.only(left: 21),
+            padding: EdgeInsets.only(left: 21),
             child: Text("How often do you drink?", style: MediumPopMed),
           ),
           SizedBox(height: 15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 36,
-                width: 109,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0XFFEEEDEF),
-                  border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
-                ),
-                child: Center(child: Text("Regularly")),
+          // DRINK SECTION
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // ✅ 2 items per row
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12,
+                childAspectRatio: 2.5, // ✅ Width/height ratio adjust karo
               ),
-              Container(
-                height: 36,
-                width: 109,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0XFFE6F3F4),
-                  border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
-                ),
-                child: Center(child: Text("Occassionally")),
-              ),
-            ],
+              itemCount: controller.drinkOptions.length,
+              itemBuilder: (context, index) {
+                final option = controller.drinkOptions[index];
+                return optionWidget(
+                  option: option,
+                  selectedValue: controller.selectedDrink,
+                );
+              },
+            ),
           ),
-          SizedBox(height: 15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 36,
-                width: 135,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0XFFEEEDEF),
-                  border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
-                ),
-                child: Center(child: Text("Trying to quit")),
-              ),
-              Container(
-                height: 36,
-                width: 87,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0XFFEEEDEF),
-                  border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
-                ),
-                child: Center(child: Text("Rarely")),
-              ),
-            ],
-          ),
-          SizedBox(height: 30),
+
+          // ✅ SMOKE SECTION
           Padding(
             padding: const EdgeInsets.only(left: 21),
             child: Text("How often do you Smoke?", style: MediumPopMed),
           ),
           SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 36,
-                width: 96,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0XFFEEEDEF),
-                  border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
-                ),
-                child: Center(child: Text("Rarely")),
-              ),
-              Container(
-                height: 36,
-                width: 132,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0XFFE6F3F4),
-                  border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
-                ),
-                child: Center(child: Text("Non-smoker")),
-              ),
-            ],
-          ),
-          SizedBox(height: 15),
+          // SMOKE SECTION
           Padding(
-            padding: const EdgeInsets.only(left: 40),
-            child: Container(
-              height: 36,
-              width: 135,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Color(0XFFEEEDEF),
-                border: Border.all(width: 1, color: Color(0XFFEEEDEF)),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12,
+                childAspectRatio: 1.8,
               ),
-              child: Center(child: Text("Trying to quit")),
+              itemCount: controller.smokeOptions.length,
+              itemBuilder: (context, index) {
+                final option = controller.smokeOptions[index];
+                return optionWidget(
+                  option: option,
+                  selectedValue: controller.selectedSmoke,
+                );
+              },
             ),
           ),
         ],
@@ -136,7 +99,7 @@ class UpdateHabitsView extends GetView<UpdateHabitsController> {
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
           child: GestureDetector(
             onTap: () {
-              print("tapp");
+              controller.updateHabits();
             },
             child: Container(
               height: 48,
@@ -151,4 +114,26 @@ class UpdateHabitsView extends GetView<UpdateHabitsController> {
       ),
     );
   }
+}
+
+Widget optionWidget({required String option, required RxString selectedValue}) {
+  return GestureDetector(
+    onTap: () {
+      selectedValue.value = option;
+    },
+    child: Obx(
+      () => Container(
+        height: 36,
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: selectedValue.value == option
+              ? Color(0XFFE6F3F4)
+              : Color(0XFFEEEDEF),
+          border: Border.all(color: Color(0XFFEEEDEF)),
+        ),
+        child: Center(child: Text(option)),
+      ),
+    ),
+  );
 }

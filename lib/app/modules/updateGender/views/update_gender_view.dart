@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/constant/styles.dart';
+import '../../editProfile/views/edit_profile_view.dart';
 import '../controllers/update_gender_controller.dart';
 
 class UpdateGenderView extends GetView<UpdateGenderController> {
@@ -10,7 +11,14 @@ class UpdateGenderView extends GetView<UpdateGenderController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: Icon(Icons.arrow_back_ios)),
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Get.to(() => EditProfileView());
+          },
+          child: Icon(Icons.arrow_back_ios),
+        ),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

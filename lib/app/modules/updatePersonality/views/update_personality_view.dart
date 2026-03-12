@@ -10,7 +10,11 @@ class UpdatePersonalityView extends GetView<UpdatePersonalityController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: Icon(Icons.arrow_back_ios)),
+      appBar: AppBar(leading: GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+          child: Icon(Icons.arrow_back_ios))),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

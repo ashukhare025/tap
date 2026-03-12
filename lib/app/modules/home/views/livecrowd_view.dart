@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/constant/styles.dart';
-import '../../../routes/app_pages.dart';
-import '../controllers/home_controller.dart';
-import 'livecrowd_view.dart';
+import 'package:tap/app/modules/home/controllers/home_controller.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
+import '../../../../core/constant/styles.dart';
+import '../../../../widget/live_crowd.dart';
+import '../../../routes/app_pages.dart';
+
+class LiveCrowdView extends GetView<HomeController> {
+  const LiveCrowdView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,9 +151,6 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(height: 10),
-
-              //Check In
-              eventCheckInCard(),
               Row(
                 children: [
                   Expanded(
@@ -168,113 +167,11 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
-                // height: 335,
-                // width: 254,
-                decoration: BoxDecoration(),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.to(() => LiveCrowdView());
-                    },
-                    child: Image.asset(
-                      "assets/image/smash.png",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 10),
-              Obx(
-                () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    controller.events.length,
-                    (index) => AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
-                      margin: EdgeInsets.symmetric(horizontal: 4),
-                      height: 8,
-                      width: controller.currentPage.value == index ? 18 : 8,
-                      decoration: BoxDecoration(
-                        color: controller.currentPage.value == index
-                            ? Color(0xFF43116A)
-                            : Colors.grey.shade300,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 50),
+              liveCrowdCard(HomeController()),
             ],
           ),
         ),
       ),
     );
   }
-}
-
-Widget eventCheckInCard() {
-  return Container(
-    width: 360,
-    padding: EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      color: Color(0xFFF1F1F1),
-      borderRadius: BorderRadius.circular(20),
-      border: Border.all(color: Color(0xFFDADADA)),
-    ),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        /// LEFT SIDE TEXT
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /// Date
-              Text("Wed, 31 Dec, 7:30 PM", style: PopMe),
-              SizedBox(height: 6),
-
-              /// Title
-              Text(
-                "The Red Carpet Bhopal's Grandest New Year Celebration",
-                style: PopiBol,
-              ),
-              SizedBox(height: 6),
-
-              /// Location
-              Text("Effotel by sayaji, Bhopal", style: PopM),
-              SizedBox(height: 10),
-
-              /// Button
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: Color(0XFF000000),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text("Check-In", style: PopWh),
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(width: 12),
-
-        /// RIGHT IMAGE
-        ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Image.asset(
-            "assets/image/smash.png",
-            height: 106,
-            width: 106,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ],
-    ),
-  );
 }

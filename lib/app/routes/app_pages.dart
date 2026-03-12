@@ -7,6 +7,7 @@ import '../modules/Checkin/views/checkin_view.dart';
 import '../modules/CreateNumber/bindings/create_number_binding.dart';
 import '../modules/CreateNumber/views/create_number_view.dart';
 import '../modules/HomeState/bindings/home_state_binding.dart';
+import '../modules/HomeState/views/home_check_in_failed_view.dart';
 import '../modules/HomeState/views/home_state_view.dart';
 import '../modules/IntroDetails/bindings/intro_details_binding.dart';
 import '../modules/IntroDetails/views/intro_details_view.dart';
@@ -22,6 +23,7 @@ import '../modules/editProfile/bindings/edit_profile_binding.dart';
 import '../modules/editProfile/views/edit_profile_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/home/views/livecrowd_view.dart';
 import '../modules/map/bindings/map_binding.dart';
 import '../modules/map/views/map_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -91,7 +93,7 @@ class AppPages {
     GetPage(name: Routes.map, page: () => MapView(), binding: MapBinding()),
     GetPage(
       name: Routes.social,
-      page: () => const SocialView(),
+      page: () => SocialView(),
       binding: SocialBinding(),
     ),
     GetPage(
@@ -126,7 +128,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.updateHabits,
-      page: () => const UpdateHabitsView(),
+      page: () => UpdateHabitsView(),
       binding: UpdateHabitsBinding(),
     ),
     GetPage(
@@ -143,6 +145,16 @@ class AppPages {
       name: Routes.updateLanguage,
       page: () => const UpdateLanguageView(),
       binding: UpdateLanguageBinding(),
+    ),
+    GetPage(
+      name: Routes.liveCrowd,
+      page: () => LiveCrowdView(),
+      binding: HomeBinding(), // same binding
+    ),
+    GetPage(
+      name: Routes.checkFailed,
+      page: () => CheckInView(),
+      binding: HomeStateBinding(), // same binding
     ),
   ];
 }

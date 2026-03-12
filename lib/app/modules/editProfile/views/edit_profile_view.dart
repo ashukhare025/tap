@@ -4,17 +4,19 @@ import 'package:get/get.dart';
 
 import '../../../../core/constant/app_constants.dart';
 import '../../../../core/constant/styles.dart';
+import '../../../routes/app_pages.dart';
 import '../../profile/controllers/profile_controller.dart';
 import '../controllers/edit_profile_controller.dart';
 
 class EditProfileView extends GetView<EditProfileController> {
-  final ProfileController profileController = Get.find<ProfileController>();
-  EditProfileView({super.key});
+  const EditProfileView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Color(0xFFFFFFFF),
         title: Text('Edit Profile', style: SemiPop),
         leading: SizedBox(
@@ -227,24 +229,27 @@ class EditProfileView extends GetView<EditProfileController> {
                   profileRow(
                     title: "Gender",
                     value: controller.gender,
-                    options: controller.genderOptions,
+                    // options: controller.genderOptions,
                     controller: controller,
+                    route: Routes.updateGender,
                   ),
 
                   // ----------------- Status -----------------
                   profileRow(
                     title: "Status",
                     value: controller.relationship,
-                    options: controller.relationshipOptions,
+                    // options: controller.relationshipOptions,
                     controller: controller,
+                    route: Routes.updateRelation,
                   ),
 
                   // ----------------- Personality -----------------
                   profileRow(
                     title: "Personality",
                     value: controller.personality,
-                    options: controller.personalityOptions,
+                    // options: controller.personalityOptions,
                     controller: controller,
+                    route: Routes.updatePersonality,
                   ),
 
                   // ----------------- Vibes -----------------
@@ -369,24 +374,27 @@ class EditProfileView extends GetView<EditProfileController> {
                   profileRow(
                     title: "Language Known",
                     value: controller.language,
-                    options: controller.languageOption,
+                    // options: controller.languageOption,
                     controller: controller,
+                    route: Routes.updateLanguage,
                   ),
 
                   // ----------------- Smoke -----------------
                   profileRow(
                     title: "Smoke",
                     value: controller.smoke,
-                    options: controller.smokeOption,
+                    // options: controller.smokeOption,
                     controller: controller,
+                    route: Routes.updateHabits,
                   ),
 
                   // ----------------- Drink -----------------
                   profileRow(
                     title: "Drink",
                     value: controller.drink,
-                    options: controller.drinkOption,
+                    // options: controller.drinkOption,
                     controller: controller,
+                    route: Routes.updateHabits,
                   ),
                 ],
               ),
@@ -467,6 +475,9 @@ class EditProfileView extends GetView<EditProfileController> {
               GestureDetector(
                 onTap: () {
                   print("Button");
+
+                  final profileController = Get.find<ProfileController>();
+
                   profileController.name.value = controller.nameController.text;
                   profileController.profession.value =
                       controller.professionController.text;
@@ -481,7 +492,6 @@ class EditProfileView extends GetView<EditProfileController> {
 
                   profileController.smoke.value = controller.smoke.value;
                   profileController.drink.value = controller.drink.value;
-
                   profileController.selectedDate.value =
                       controller.selectedDate.value;
 
@@ -490,7 +500,6 @@ class EditProfileView extends GetView<EditProfileController> {
                     controller.selectedVibe.value,
                   ];
 
-                  // Language (string -> list convert)
                   profileController.language.value = [
                     controller.language.value,
                   ];

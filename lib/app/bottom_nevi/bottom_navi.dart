@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../modules/chat/controllers/chat_controller.dart';
 import '../modules/chat/views/chat_view.dart';
 import '../modules/map/views/map_view.dart';
+import '../modules/social/controllers/social_controller.dart';
 import '../modules/social/views/social_view.dart';
 import '../modules/vibes/views/vibes_view.dart';
 import '../modules/home/controllers/home_controller.dart';
@@ -15,6 +16,7 @@ class BottomNavView extends StatelessWidget {
 
   final controller = Get.put(HomeController());
   final chatController = Get.put(ChatController());
+  final socialController = Get.put(SocialController());
 
   final pages = [SocialView(), ChatView(), HomeView(), VibesView(), MapView()];
 
